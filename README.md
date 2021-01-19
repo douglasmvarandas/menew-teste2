@@ -1,20 +1,33 @@
 <img src="https://mvarandas.com.br/static/default/images/menew-bymv.png" width="200">
 
-## **TESTE PARA DESENVOLVEDOR (2)**
+## **TESTE PARA DESENVOLVEDOR (3)**
 
 **Informações Iniciais:**
-
-Para submeter o seu projeto, **faça um fork** deste repositório e realize um **pull request** para enviar o seu código;
+1. Para submeter o seu projeto, **faça um fork** deste repositório e realize um **pull request** para enviar o seu código;
+2. O projeto devera utilizar o banco de dados Firebird 2.5;
+3. O dump do Banco de Dados deve fazer parte dos arquivos versionados.
+4. Nome do Banco de dados, tabelas, campos e tipos, fica ao critério do desenvolvedor.
+5. Linguagem utilizada C#.
+6. O endereço deverá ser preenchido de forma automática ao preencher o campo CEP, utilizar a  API da ViaCEP (https://viacep.com.br/).
+7. O projeto deverá ser POO;
 
 **Questão:**
+Elaborar uma aplicação de cadastro de clientes para listar, cadastrar e editar informações dos clientes.
 
-Elaborar uma aplicação com React ou React Native (Android ou IOS) que atenda aos seguintes requisitos:
+a) Os campos do formulário são os seguintes:
+ - nome 
+ - telefone 
+ - email 
+ - cep
+ - cidade 
+ - estado 
+ - rua
+ - numero
+ - complemento
 
- - apresentar um menu inferior para navegação;
- - apresentar uma tela de login;
- - apresentar uma tela de cadastro com os campos: nome, email e CPF;
- - disponibilizar uma lista de itens com nome, descrição e foto.
+b) Deve ter uma busca de registros e respeitar os seguintes requisitos:
+ - o código precisa ser bem formatado;
+ - precisa ter responsividade;
+ - ter tratamento de erros;
  
-Ps.: não precisa interagir com API para listar ou cadastrar informações, de maneira que as informações que serão apresentadas em tela podem ser definidas na própria aplicação.
- 
-...Boa Sorte!
+... “Que a Força esteja com você”

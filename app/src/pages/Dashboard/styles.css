@@ -1,0 +1,9 @@
+body {
+  background: var(--color-background);
+}
+
+.dashboard-container main {
+  padding: 3.2rem 0;
+  max-width: 740px;
+  margin: 0 auto;
+}
