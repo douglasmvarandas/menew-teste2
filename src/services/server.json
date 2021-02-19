@@ -1,0 +1,66 @@
+[
+  {
+    "id": 1,
+    "name": "Tênis Nike Air",
+    "description": "A silhueta original do Air Force 1 foi mantida, apesar dos novos sneakers contarem com o logo da Nike duplicado e duas vezes mais alto.",
+    "price": "R$ 290,90",
+    "urlImage": "https://i.pinimg.com/474x/e1/ff/33/e1ff3302a1966b441064eaeac19367cf.jpg",
+    "available": true
+  },
+  {
+    "id": 2,
+    "name": "Casaco Nike",
+    "description": "Produzido com material aconchegante, o modelo de design clássico traz capuz com cordão ajustável e bolso canguru.",
+    "price": "R$ 189,90",
+    "urlImage": "https://i.pinimg.com/originals/89/56/f8/8956f8b5ecbf0d16c77bcfffcfe580dc.jpg",
+    "available": true
+  },
+  {
+    "id": 3,
+    "name": "Chapéu Tie Dye",
+    "description": "O bucket hat Tie Dye Colours foi desenvolvido em tecido Rip Stop (o mesmo utilizado em fardas militares), material resistente à água",
+    "urlImage": "https://cdn.awsli.com.br/1000x1000/12/12671/produto/61611514/fc8c7a6342.jpg",
+    "price": "R$ 28,00",
+    "available": true
+  },
+  {
+    "id": 4,
+    "name": "Tênis Nike Air",
+    "description": "A silhueta original do Air Force 1 foi mantida, apesar dos novos sneakers contarem com o logo da Nike duplicado e duas vezes mais alto.",
+    "price": "R$ 199,99",
+    "urlImage": "https://artwalk.vteximg.com.br/arquivos/ids/214575-1000-1000/Tenis-Nike-Air-Max-270-React-Feminino-Multicolor.jpg?v=636991360406330000",
+    "available": true
+  },
+  {
+    "id": 5,
+    "name": "Bolsa Tie Dye",
+    "description": "Mochila de costas no material courino nas cores tie dye",
+    "price": "R$ 999,99",
+    "urlImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTW7Dp2YmQ_Kjg0fJ64p9UhxuEqJHgr_7qPvA&usqp=CAU",
+    "available": true
+  },
+  {
+    "id": 6,
+    "name": "Tênis Tie Dye",
+    "description": "A silhueta original do Air Force 1 foi mantida, apesar dos novos sneakers contarem com o logo da Nike duplicado e duas vezes mais alto.",
+    "price": "R$ 290,90",
+    "urlImage": "https://gaston.vteximg.com.br/arquivos/ids/289509-1000-1000/2001112471_Ampliada.jpg?v=637330237723130000",
+    "available": true
+  },
+  {
+    "id": 7,
+    "name": "Camisa Tie Dye",
+    "description": "Produzido com material aconchegante, o modelo de design clássico traz capuz com cordão ajustável e bolso canguru.",
+    "price": "R$ 189,90",
+    "urlImage": "https://img.lojasrenner.com.br/item/552323713/zoom/10.jpg",
+    "available": true
+  },
+  {
+    "id": 8,
+    "name": "Blusa Tie Dye",
+    "description": "O bucket hat Tie Dye Colours foi desenvolvido em tecido Rip Stop (o mesmo utilizado em fardas militares), material resistente à água",
+    "urlImage": "https://usedmnd.com.br/wp-content/uploads/2020/10/camiseta-tie-dye-frase-ja-to-com-a-roupa-de-ir-600x600.jpg",
+    "price": "R$ 28,00",
+    "available": true
+  }
+]
