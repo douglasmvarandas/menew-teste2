@@ -5,21 +5,8 @@ import {NavigationContainer} from '@react-navigation/native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import {Text, View} from 'react-native';
 
-function login() {
-  return (
-    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-      <Text>login</Text>
-    </View>
-  );
-}
-
-function cadastro() {
-  return (
-    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-      <Text>cadastro</Text>
-    </View>
-  );
-}
+import cadastro from './cadastro/index';
+import login from './login/index';
 
 function itens() {
   return (
@@ -32,11 +19,14 @@ function itens() {
 const Tab = createBottomTabNavigator();
 
 function Tabs() {
+
   return (
     <Tab.Navigator
-      initialRouteName="login"
+      initialRouteName='login'
+      activeColor="orangered"
       tabBarOptions={{
-        activeTintColor: '#e91e63',
+        activeTintColor: 'orangered',
+        inactiveTintColor: 'lightslategrey'
       }}
     >
       <Tab.Screen
@@ -86,9 +76,15 @@ function Tabs() {
 }
 
 export default function App() {
+
   return (
     <NavigationContainer>
       <Tabs />
     </NavigationContainer>
   );
 }
+
+export const storagePath = {
+  userArray: '@test_app:users',
+  userName: '@test_app:username',
+};
