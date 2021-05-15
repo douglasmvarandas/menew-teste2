@@ -1,0 +1,60 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "fulano de tal",
+      "email": "fulano@email.com",
+      "cpf": "01234567890"
+    },
+    {
+      "id": 2,
+      "name": "joão da silva",
+      "email": "joao@email.com",
+      "cpf": "01234567891"
+    },
+    {
+      "id": 3,
+      "name": "Ana Clara",
+      "email": "ana@clara.com",
+      "cpf": "01234567892"
+    },
+    {
+      "name": "Patrick Chaves",
+      "email": "patrick095@gmail.com",
+      "cpf": "09445112440",
+      "id": 4
+    }
+  ],
+  "items": [
+    {
+      "id": 1,
+      "name": "Pastel misto",
+      "description": "Pastel com massa tradicional e recheio de queijo e presunto",
+      "photo": "https://media.istockphoto.com/photos/pastel-misto-picture-id1048467332?k=6&m=1048467332&s=170667a&w=0&h=5jmJNKpH-VeF4H3DikGUH232sTFT9kG0p0TxVbyULL8="
+    },
+    {
+      "id": 2,
+      "name": "Pastel de Carne com Queijo",
+      "description": "Pastel com massa tradicional e recheio de Carne com queijo Mussarela",
+      "photo": "https://media-cdn.tripadvisor.com/media/photo-s/14/5c/5c/bf/pastel-misto.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Pastel de Pizza",
+      "description": "Pastel com massa tradicional e recheio de queijo, presunto, manjericão, tomate e molho de pizza",
+      "photo": "https://s2.glbimg.com/52lcKKkqRlVUevFQiQjQ0CmhZUA=/0x0:500x375/984x0/smart/filters:strip_icc()/s.glbimg.com/po/rc/media/2011/06/02/11/24/14/475/18_pizza.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Pastel de Carne",
+      "description": "Pastel com massa tradicional e recheio de Carne com salada",
+      "photo": "https://www.sabornamesa.com.br/media/k2/items/cache/c501a702ef05e90d163a1eeeb1633357_L.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Pastel de Frango",
+      "description": "Pastel com massa tradicional e recheio de Frango desfiado com milho e coentro",
+      "photo": "https://i.pinimg.com/originals/80/1b/1f/801b1f09b35db30e3903530b3d844fbb.jpg"
+    }
+  ]
+}
