@@ -3,18 +3,10 @@ import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {NavigationContainer} from '@react-navigation/native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import {Text, View} from 'react-native';
 
 import cadastro from './cadastro/index';
 import login from './login/index';
-
-function itens() {
-  return (
-    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-      <Text>itens</Text>
-    </View>
-  );
-}
+import itens from './itens/index';
 
 const Tab = createBottomTabNavigator();
 
