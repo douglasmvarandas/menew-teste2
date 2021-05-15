@@ -24,8 +24,6 @@ export default class App extends Component {
             orientation: isPortrait(),
             clickPosition: itensList.length,
         };
-
-        this.ImageArray = React.createRef([]);
     }
 
     onLayoutChange = async () => {

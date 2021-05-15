@@ -30,9 +30,10 @@ export default class App extends Component {
     }
 
     async componentDidMount() {
+        //Verifica se existe usuarios cadastrados no inicio caso não navega pro
         const user_array = JSON.parse(
-                (await AsyncStorage.getItem(storagePath.userArray)) || '[]',
-            ),
+            (await AsyncStorage.getItem(storagePath.userArray)) || '[]',
+        ),
             {
                 navigation: {navigate},
             } = this.props;
@@ -50,8 +51,8 @@ export default class App extends Component {
     AddUser = async () => {
         //verifica se algum usuario existe se não pula para tela de cadastro
         const user_array = JSON.parse(
-                (await AsyncStorage.getItem(storagePath.userArray)) || '[]',
-            ),
+            (await AsyncStorage.getItem(storagePath.userArray)) || '[]',
+        ),
             {
                 navigation: {navigate},
             } = this.props;
@@ -89,7 +90,7 @@ export default class App extends Component {
 
             //verifica se o CPF existe na lista de usuários
             const index = user_array
-                .map(function (pos) {
+                .map(function(pos) {
                     return pos.cpf;
                 })
                 .indexOf(limpa_cpf);
