@@ -112,11 +112,13 @@ export default class App extends Component {
                     userName: userName
                 });
 
-                navigate('login');
-
                 //Limpa todas entradas pois os valores foram aceitos
                 this.CPF_textInput.current.clear();
+                this.setState({
+                    cpf: ''
+                });
 
+                navigate('login');
             } else {
 
                 Alert.alert('Usuário não encontrado!');

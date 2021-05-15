@@ -96,7 +96,6 @@ export default class App extends Component {
             this.CPF_textInput.current.clear();
             this.Email_textInput.current.clear();
 
-
         } else {
 
             Alert.alert('Favor preencher todos os valores!');
