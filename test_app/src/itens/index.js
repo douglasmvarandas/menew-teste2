@@ -17,15 +17,24 @@ export default class App extends Component {
         super();
 
         this.state = {
-            orientation: isPortrait()
+            orientation: isPortrait(),
+            clickPosition: itemData.length
         };
+
+        this.ImageArray = React.createRef([]);
+
 
     }
 
     onLayout() {
-        console.log('onLayout');
         this.setState({
             orientation: isPortrait()
+        });
+    }
+
+    imageClick = async (index) => {
+        this.setState({
+            clickPosition: this.state.clickPosition === index ? itemData.length : index
         });
     }
 
@@ -33,12 +42,13 @@ export default class App extends Component {
 
         const images_len = itemData.length,
             isPortrait = this.state.orientation,
+            clickPosition = this.state.clickPosition,
             cardHolder = isPortrait ? styles.cardHolder : styles.cardHolderLandscape,
+            imgHolder = isPortrait ? styles.imageHolderPortrait : styles.imageHolderLandscape,
+            styleNome = isPortrait ? styles.nome : styles.nomeLandscape,
+            styleDescricao = isPortrait ? styles.descricao : styles.descricaoLandscape,
+            imageHolderBig = isPortrait ? styles.imageHolderBigPortrait : styles.imageHolderBig,
             extraStyle = [cardHolder, styles.cardHolderExtra];
-
-        const imageClick = () => {
-            console.log('Click');
-        }
 
         return (
 
@@ -61,16 +71,18 @@ export default class App extends Component {
                             key={'view' + index}>
 
                             <Text
-                                style={isPortrait ? styles.nome : styles.nomeLandscape}
+                                style={clickPosition === index ? styles.hide : styleNome}
                                 key={'name' + index}>{position.nome}</Text>
 
                             <View
-                                style={isPortrait ? styles.imageHolderPortrait : styles.imageHolderLandscape}
+                                style={clickPosition === index ? imageHolderBig : imgHolder}
                                 key={'view_iner' + index}>
 
                                 <Pressable
                                     key={'press' + index}
-                                    onPress={imageClick}>
+                                    onPress={() => {
+                                        this.imageClick(index);
+                                    }}>
 
                                     <Image
                                         style={styles.image}
@@ -84,16 +96,21 @@ export default class App extends Component {
 
                             </View>
 
+
+
                             <Text
-                                style={isPortrait ? styles.descricao : styles.descricaoLandscape}
+                                style={clickPosition === index ? styles.hide : styleDescricao}
                                 key={'desc' + index}>{position.descrição}</Text>
 
                         </View>
+
+
                     )}
 
                 </ScrollView>
 
             </View>
+
         );
     }
 }
@@ -105,7 +122,7 @@ const itemData = [
         descrição: 'Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.',
     },
     {
-        foto: 'https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_FMjpg_UY225_.jpg',
+        foto: 'https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1.jpg',
         nome: 'The Godfather',
         descrição: 'An organized crime dynasty\'s aging patriarch transfers control of his clandestine empire to his reluctant son.',
     },

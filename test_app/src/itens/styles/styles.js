@@ -25,6 +25,31 @@ const styles = StyleSheet.create({
         borderColor: 'white',
         borderRadius: 10
     },
+    imageHolderBigPortrait: {
+        position: 'absolute',
+        width: '115%',
+        height: '102%',
+        zIndex: 100,
+        left: '50%',
+        transform: [{translateX: -112}],
+        borderWidth: 4,
+        borderColor: 'white',
+        borderRadius: 50,
+        overflow: 'hidden'
+    },
+    imageHolderBig: {
+        position: 'absolute',
+        width: '30%',
+        height: '105%',
+        zIndex: 100,
+        left: '50%',
+        transform: [{translateX: -70}],
+        marginEnd: 'auto',
+        borderWidth: 4,
+        borderColor: 'white',
+        borderRadius: 10,
+        overflow: 'hidden'
+    },
     imageHolderPortrait: {
         width: ImageSize,
         height: ImageSize * (16 / 9),
@@ -32,7 +57,7 @@ const styles = StyleSheet.create({
         marginEnd: 'auto',
         borderWidth: 4,
         borderColor: 'white',
-        borderRadius: 10
+        borderRadius: 10,
     },
     image: {
         width: '100%',
@@ -96,7 +121,8 @@ const styles = StyleSheet.create({
         height: screenDefault * 0.05 * (16 / 9) + 210,
         backgroundColor: 'orangered',
         marginStart: ImageMargin,
-        borderRadius: 25
+        borderRadius: 25,
+        overflow: 'hidden'
     },
     cardHolder: {
         justifyContent: "center",
@@ -108,10 +134,15 @@ const styles = StyleSheet.create({
         height: screenDefault * 0.4 * (16 / 9) + 210,
         backgroundColor: 'orangered',
         marginStart: ImageMargin,
-        borderRadius: 50
+        borderRadius: 50,
+        overflow: 'hidden'
     },
     cardHolderExtra: {
-        marginEnd: ImageMargin
+        marginEnd: ImageMargin,
+        overflow: 'hidden'
+    },
+    hide: {
+        display: "none"
     }
 });
 
