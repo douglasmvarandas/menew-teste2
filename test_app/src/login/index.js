@@ -112,7 +112,7 @@ export default class App extends Component {
                     userName: userName
                 });
 
-                navigate('itens');
+                navigate('login');
 
                 //Limpa todas entradas pois os valores foram aceitos
                 this.CPF_textInput.current.clear();

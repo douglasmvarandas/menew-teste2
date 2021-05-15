@@ -1,50 +1,80 @@
 import React, {Component} from 'react';
 
 import {
+    Dimensions,
     Image,
     ScrollView,
     Text,
     View
 } from 'react-native';
 
-import styles from '../styles/styles';
+import styles from './styles/styles';
 
 export default class App extends Component {
+
+    constructor() {
+        super();
+
+        this.state = {
+            orientation: isPortrait()
+        };
+
+    }
+
+    onLayout() {
+        console.log('onLayout');
+        this.setState({
+            orientation: isPortrait()
+        });
+    }
 
     render() {
 
         const images_len = itemData.length,
-            extraStyle = [styles.imageHolder, styles.imageHolderExtra];
+            isPortrait = this.state.orientation,
+            cardHolder = isPortrait ? styles.cardHolder : styles.cardHolderLandscape,
+            extraStyle = [cardHolder, styles.cardHolderExtra];
 
         return (
 
-            <View style={styles.inner}>
+            <View style={styles.inner}
+                onLayout={this.onLayout.bind(this)}>
 
-                <Text style={styles.headerImage}>Top Rated Movies</Text>
+                <Text style={styles.headerList}>Top Rated Movies</Text>
 
                 <ScrollView
-                    horizontal={true}>
+                    horizontal={true}
+                    ref={ref => this.ScrollView = ref}
+                    onContentSizeChange={() => {
+                        this.ScrollView.scrollTo({y: 0})
+                    }}>
 
                     {itemData.map((position, index) =>
 
                         <View
-                            style={(images_len === (index + 1)) ? extraStyle : styles.imageHolder}
+                            style={(images_len === (index + 1)) ? extraStyle : cardHolder}
                             key={'view' + index}>
 
                             <Text
-                                style={styles.nome}
+                                style={isPortrait ? styles.nome : styles.nomeLandscape}
                                 key={'name' + index}>{position.nome}</Text>
 
-                            <Image
-                                style={styles.picture}
-                                source={{
-                                    uri: position.foto,
-                                }}
-                                key={'image' + index}
-                            />
+                            <View
+                                style={isPortrait ? styles.imageHolderPortrait : styles.imageHolderLandscape}
+                                key={'view_iner' + index}>
+
+                                <Image
+                                    style={styles.image}
+                                    source={{
+                                        uri: position.foto,
+                                    }}
+                                    key={'image' + index}
+                                />
+
+                            </View>
 
                             <Text
-                                style={styles.descricao}
+                                style={isPortrait ? styles.descricao : styles.descricaoLandscape}
                                 key={'desc' + index}>{position.descrição}</Text>
 
                         </View>
@@ -84,3 +114,9 @@ const itemData = [
         descrição: 'A jury holdout attempts to prevent a miscarriage of justice by forcing his colleagues to reconsider the evidence.',
     },
 ];
+
+const isPortrait = () => {
+    const dim = Dimensions.get('window');
+
+    return dim.height >= dim.width;
+};
