@@ -3,6 +3,7 @@ import React, {Component} from 'react';
 import {
     Dimensions,
     Image,
+    Pressable,
     ScrollView,
     Text,
     View
@@ -35,6 +36,10 @@ export default class App extends Component {
             cardHolder = isPortrait ? styles.cardHolder : styles.cardHolderLandscape,
             extraStyle = [cardHolder, styles.cardHolderExtra];
 
+        const imageClick = () => {
+            console.log('Click');
+        }
+
         return (
 
             <View style={styles.inner}
@@ -63,13 +68,19 @@ export default class App extends Component {
                                 style={isPortrait ? styles.imageHolderPortrait : styles.imageHolderLandscape}
                                 key={'view_iner' + index}>
 
-                                <Image
-                                    style={styles.image}
-                                    source={{
-                                        uri: position.foto,
-                                    }}
-                                    key={'image' + index}
-                                />
+                                <Pressable
+                                    key={'press' + index}
+                                    onPress={imageClick}>
+
+                                    <Image
+                                        style={styles.image}
+                                        source={{
+                                            uri: position.foto,
+                                        }}
+                                        key={'image' + index}
+                                    />
+
+                                </Pressable>
 
                             </View>
 
