@@ -11,5 +11,9 @@
         <!-- This one changes buttons text color -->
         <item name="colorAccent">#ff4500</item>
     </style>
+    
+    <style name="AppTheme.Launcher">
+        <item name="android:windowBackground">@drawable/splash</item>
+    </style>
 
 </resources>
