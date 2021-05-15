@@ -70,15 +70,26 @@ export default class App extends Component {
 
             }
 
-            var user_array = JSON.parse(await AsyncStorage.getItem(storagePath.userArray) || '[]');
-
-            user_array.push(
-                {
+            var user_array = JSON.parse(await AsyncStorage.getItem(storagePath.userArray) || '[]'),
+                index = user_array.map(function(e) {return e.cpf;}).indexOf(limpa_cpf),
+                user_obj = {
                     nome: this.state.nome,
                     email: this.state.email,
                     cpf: limpa_cpf,
-                }
-            );
+                };
+
+            if (index > -1) {
+
+                user_array[index] = user_obj;
+
+                Alert.alert('Usuário já existe infromações foram atualizadas!');
+
+            } else {
+
+                user_array.push(user_obj);
+
+                Alert.alert('Usuário adicionado com sucesso!');
+            }
 
             await AsyncStorage.setItem(
                 storagePath.userArray,
@@ -86,8 +97,6 @@ export default class App extends Component {
                     user_array
                 ),
             );
-
-            Alert.alert('Usuário adicionado com sucesso!');
 
             navigate('login');
 
