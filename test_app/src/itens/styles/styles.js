@@ -1,20 +1,23 @@
+/**
+ * @format
+ * @flow strict-local
+ */
+
 import {StyleSheet, Dimensions} from 'react-native';
 
 const screenWidth = Dimensions.get('window').width,
     screenHeight = Dimensions.get('window').height,
     screenDefault = screenWidth < screenHeight ? screenWidth : screenHeight;
 
-const ImageSize = screenDefault * 0.4,
-    ImageMargin = ((screenDefault - (screenDefault * 0.75) - 60) / 2),
+const ImageSize = screenDefault * 0.35,
+    ImageMargin = (screenDefault - screenDefault * 0.75 - 60) / 2,
     SizeOffset = 0.7;
-
 
 const styles = StyleSheet.create({
     inner: {
         flex: 1,
-        justifyContent: "center",
+        justifyContent: 'center',
         alignSelf: 'center',
-
     },
     imageHolderLandscape: {
         position: 'absolute',
@@ -23,9 +26,9 @@ const styles = StyleSheet.create({
         marginStart: 10,
         borderWidth: 4,
         borderColor: 'white',
-        borderRadius: 10
+        borderRadius: 10,
     },
-    imageHolderBigPortrait: {
+    imageHolderBig: {
         position: 'absolute',
         width: '115%',
         height: '102%',
@@ -35,9 +38,9 @@ const styles = StyleSheet.create({
         borderWidth: 4,
         borderColor: 'white',
         borderRadius: 50,
-        overflow: 'hidden'
+        overflow: 'hidden',
     },
-    imageHolderBig: {
+    imageHolderBigLandscape: {
         position: 'absolute',
         width: '30%',
         height: '105%',
@@ -48,9 +51,9 @@ const styles = StyleSheet.create({
         borderWidth: 4,
         borderColor: 'white',
         borderRadius: 10,
-        overflow: 'hidden'
+        overflow: 'hidden',
     },
-    imageHolderPortrait: {
+    imageHolder: {
         width: ImageSize,
         height: ImageSize * (16 / 9),
         marginStart: 'auto',
@@ -65,7 +68,7 @@ const styles = StyleSheet.create({
         maxWidth: '100%',
         maxHeight: '100%',
         overflow: 'hidden',
-        borderRadius: 5
+        borderRadius: 5,
     },
     headerList: {
         fontSize: 25,
@@ -75,7 +78,7 @@ const styles = StyleSheet.create({
         borderWidth: 2,
         margin: 5,
         borderRadius: 5,
-        backgroundColor: 'silver'
+        backgroundColor: 'silver',
     },
     nome: {
         color: 'white',
@@ -83,7 +86,9 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         textAlign: 'center',
         height: 25,
-        marginBottom: 10
+        marginBottom: 10,
+        marginTop: -10,
+        textAlignVertical: 'center',
     },
     nomeLandscape: {
         color: 'white',
@@ -93,14 +98,16 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         textAlign: 'center',
         height: 25,
-        marginBottom: 10
+        marginBottom: 10,
+        textAlignVertical: 'center',
     },
     descricao: {
         color: 'white',
         fontSize: 17,
         textAlign: 'center',
-        height: 125,
-        marginTop: 7
+        height: 160,
+        marginTop: 7,
+        textAlignVertical: 'center',
     },
     descricaoLandscape: {
         color: 'white',
@@ -109,10 +116,11 @@ const styles = StyleSheet.create({
         fontSize: 17,
         textAlign: 'center',
         height: 125,
-        marginTop: 7
+        marginTop: 7,
+        textAlignVertical: 'center',
     },
     cardHolderLandscape: {
-        justifyContent: "center",
+        justifyContent: 'center',
         alignSelf: 'center',
         padding: 10,
         paddingStart: 25,
@@ -122,10 +130,10 @@ const styles = StyleSheet.create({
         backgroundColor: 'orangered',
         marginStart: ImageMargin,
         borderRadius: 25,
-        overflow: 'hidden'
+        overflow: 'hidden',
     },
     cardHolder: {
-        justifyContent: "center",
+        justifyContent: 'center',
         alignSelf: 'center',
         padding: 10,
         paddingStart: 25,
@@ -135,15 +143,15 @@ const styles = StyleSheet.create({
         backgroundColor: 'orangered',
         marginStart: ImageMargin,
         borderRadius: 50,
-        overflow: 'hidden'
+        overflow: 'hidden',
     },
     cardHolderExtra: {
         marginEnd: ImageMargin,
-        overflow: 'hidden'
+        overflow: 'hidden',
     },
     hide: {
-        display: "none"
-    }
+        display: 'none',
+    },
 });
 
 export default styles;

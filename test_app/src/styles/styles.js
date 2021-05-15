@@ -1,19 +1,20 @@
+/**
+ * @format
+ * @flow strict-local
+ */
+
 import {StyleSheet, Dimensions} from 'react-native';
 
-const screenWidth = Dimensions.get('window').width,
-    ImageSize = screenWidth * 0.4,
-    ImageMargin = ((screenWidth - (screenWidth * 0.75) - 60) / 2);
-//const screenHeight = Dimensions.get('window').height;
+const screenWidth = Dimensions.get('window').width;
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1
+        flex: 1,
     },
     inner: {
         flex: 1,
-        justifyContent: "center",
+        justifyContent: 'center',
         alignSelf: 'center',
-
     },
     header: {
         fontSize: 36,
@@ -24,22 +25,22 @@ const styles = StyleSheet.create({
         borderWidth: 2,
         margin: 5,
         borderRadius: 5,
-        backgroundColor: 'silver'
+        backgroundColor: 'silver',
     },
     textInput: {
         height: 40,
-        borderColor: "#000000",
+        borderColor: '#000000',
         borderBottomWidth: 1,
         marginBottom: 10,
-        color: 'black'
+        color: 'black',
     },
     btnContainer: {
-        backgroundColor: "white",
-        marginTop: 20
+        backgroundColor: 'white',
+        marginTop: 20,
     },
     hide: {
-        display: "none"
-    }
+        display: 'none',
+    },
 });
 
 export default styles;
