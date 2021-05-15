@@ -12,6 +12,10 @@ import styles from '../styles/styles';
 export default class App extends Component {
 
     render() {
+
+        const images_len = itemData.length,
+            extraStyle = [styles.imageHolder, styles.imageHolderExtra];
+
         return (
 
             <View style={styles.inner}>
@@ -19,15 +23,13 @@ export default class App extends Component {
                 <Text style={styles.headerImage}>Top Rated Movies</Text>
 
                 <ScrollView
-                    style={styles.ScrollView}
                     horizontal={true}>
 
                     {itemData.map((position, index) =>
 
                         <View
-                            style={styles.imageHolder}
+                            style={(images_len === (index + 1)) ? extraStyle : styles.imageHolder}
                             key={'view' + index}>
-
 
                             <Text
                                 style={styles.nome}

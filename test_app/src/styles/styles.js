@@ -2,7 +2,7 @@ import {StyleSheet, Dimensions} from 'react-native';
 
 const screenWidth = Dimensions.get('window').width,
     ImageSize = screenWidth * 0.4,
-    ImageMargin = ((screenWidth - (screenWidth * 0.75) - 75) / 2);
+    ImageMargin = ((screenWidth - (screenWidth * 0.75) - 60) / 2);
 //const screenHeight = Dimensions.get('window').height;
 
 const styles = StyleSheet.create({
@@ -86,9 +86,9 @@ const styles = StyleSheet.create({
         marginStart: ImageMargin,
         borderRadius: 50
     },
-    ScrollView: {
-        marginEnd: ImageMargin,
-    },
+    imageHolderExtra: {
+        marginEnd: ImageMargin
+    }
 });
 
 export default styles;
