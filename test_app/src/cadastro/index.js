@@ -123,6 +123,7 @@ export default class App extends Component {
 
                         <TextInput
                             placeholder="Nome"
+                            placeholderTextColor="darkgray"
                             value={nome}
                             ref={this.Nome_textInput}
                             onChangeText={(nome) => this.setState({nome: nome})}
@@ -131,6 +132,7 @@ export default class App extends Component {
 
                         <TextInput
                             placeholder="CPF"
+                            placeholderTextColor="darkgray"
                             keyboardType="numeric"
                             value={cpf}
                             ref={this.CPF_textInput}
@@ -140,6 +142,7 @@ export default class App extends Component {
 
                         <TextInput
                             placeholder="Email"
+                            placeholderTextColor="darkgray"
                             keyboardType="email-address"
                             value={email}
                             ref={this.Email_textInput}

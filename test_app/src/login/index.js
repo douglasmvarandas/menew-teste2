@@ -150,6 +150,7 @@ export default class App extends Component {
 
                         <TextInput
                             placeholder="CPF"
+                            placeholderTextColor="darkgray"
                             keyboardType="numeric"
                             value={cpf}
                             ref={this.CPF_textInput}

@@ -30,7 +30,8 @@ const styles = StyleSheet.create({
         height: 40,
         borderColor: "#000000",
         borderBottomWidth: 1,
-        marginBottom: 10
+        marginBottom: 10,
+        color: 'black'
     },
     btnContainer: {
         backgroundColor: "white",
