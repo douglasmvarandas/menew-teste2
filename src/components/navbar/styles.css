@@ -1,0 +1,44 @@
+.navbar {
+    width: 100vw;
+    height: 100px;
+    background-color: rgb(224, 16, 16);
+    position: fixed;
+    bottom: 0;
+}
+.navbar .links {
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.navbar .links a, button {
+    border: none;
+    background-color: #ffffff00;
+    margin: 10px;
+    text-decoration: none;
+    color: white;
+    font-size: 30px;
+    opacity: 0.8;
+    cursor: pointer;
+}
+.navbar .links #Logo {
+    width: 141px;
+    height: 40px;
+    background-position: 0px -255px;
+    text-indent: -9999px;
+}
+.navbar .links a:hover,button:hover {
+    opacity: 1;
+}
+@media screen and (max-width: 800px) {
+    .navbar {
+        height: 60px;
+    }
+    .navbar .links {
+        padding: 5px;
+        justify-content: space-between;
+    }
+    .navbar .links a, button{
+        font-size: 24px;
+    }
+}
