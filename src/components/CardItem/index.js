@@ -1,6 +1,6 @@
 import React from "react";
 
-function CardUnid(props) {
+function CardItem(props) {
   return (
     <>
       <li className="card-item">
@@ -17,4 +17,4 @@ function CardUnid(props) {
   );
 }
 
-export default CardUnid;
+export default CardItem;

@@ -6,7 +6,7 @@ function Login() {
     <>
       <div className="container-log">
         <div className="login">
-          <img src="images/avatar.png" />
+          <img src="https://visualpharm.com/assets/68/Checked%20User%20Male-595b40b65ba036ed117d3d98.svg" />
           <div className="input-cnt">
             <h1>LOGIN</h1>
             <input placeholder="Username"></input>

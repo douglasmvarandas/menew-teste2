@@ -5,7 +5,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #e7e0ee;
+  background-color: #e9e9e9;
   
 }
 
@@ -32,8 +32,9 @@ h1{
   padding: 2vh;
 }
 img {
-  height:40vh;
+  height:10vh;
   border-radius: 40%;
+
 }
 
 input{

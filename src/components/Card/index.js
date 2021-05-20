@@ -1,5 +1,5 @@
 import React from "react";
-import CardUnid from "../CardUnid";
+import CardItem from "../CardItem";
 import "./styles.css";
 
 function Card() {
@@ -9,22 +9,22 @@ function Card() {
       <div className="card-container">
         <div className="card-wrapper">
           <ul className="card-item">
-            <CardUnid
+            <CardItem
               src="images/img1.jpg"
               text="Delicioso Hamburguer com batatas fritas"
               label="Hamburguer"
             />
-            <CardUnid
+            <CardItem
               src="images/img2.jpg"
               text="Um dos melhores sabores do Brasil"
               label="Cachorro quente"
             />
-            <CardUnid
+            <CardItem
               src="images/img3.jpg"
               text="Massa super suave e com gostinho muito italiano"
               label="Pizza"
             />
-            <CardUnid
+            <CardItem
               src="images/img4.jpg"
               text="Para matar esse calor, com amendoim, oreo ou morango"
               label="Milk Shake"

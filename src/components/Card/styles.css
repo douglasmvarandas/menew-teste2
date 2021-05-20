@@ -28,7 +28,7 @@ h1, h3 {
   margin: 0 1rem;
   border-radius: 10px;
   justify-content: center;
-  
+  flex-wrap: wrap;
 }
 
 .card-link{

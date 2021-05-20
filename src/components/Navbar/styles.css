@@ -1,0 +1,31 @@
+.navbar-default {
+  position:fixed;
+	bottom:0;
+	left:0;
+	right:0;
+  display:flex;	
+	height:50px;
+	background-color:#c52626;
+  align-items:center;
+  justify-content:center;
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  height: 80px;
+  max-width: 1500px;
+  list-style-type: none;
+}
+
+.navbar-container li :link{
+  padding: 40px;
+  text-decoration: none; 
+}
+.nav-link{ 
+  text-align: center;
+  font-size: 20px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  color: #ffffff;
+}
