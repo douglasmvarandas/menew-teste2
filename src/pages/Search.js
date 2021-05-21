@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import Header from '../components/Header';
 import { Container, SearchArea, Card, Texts } from '../styles/components/Search';
-import Teachers from '../Teachers';
+import getTeachersList from '../Teachers';
 import Footer from '../components/Footer';
 import BottomNavigation from '../components/BottomNavigation';
 
@@ -11,7 +11,7 @@ function Search() {
 
   useEffect(() => {
     const loadAll = async () => {
-      let list = await Teachers.getTeachersList();
+      let list = await getTeachersList();
       setTeachersList(list);
     };
     loadAll();

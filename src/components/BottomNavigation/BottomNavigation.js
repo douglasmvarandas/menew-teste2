@@ -29,6 +29,10 @@ export const Container = styled.div`
   }
 
   @media (max-width: 768px) {
+    #bottom-navigation {
+      height: 60px;
+    }
+
     .menu-icons {
       width: 32px;
       height: 32px;

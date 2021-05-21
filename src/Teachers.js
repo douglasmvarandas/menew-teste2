@@ -9,9 +9,8 @@ import teacher08 from './images/teachers/teacher08.jpg';
 import teacher09 from './images/teachers/teacher09.jpg';
 import teacher10 from './images/teachers/teacher10.jpg';
 
-export default {
-  getTeachersList: () => {
-    return [
+function getTeachersList() {
+    return ([
       {
         image: teacher01,
         name: 'Helena Ramos',
@@ -62,6 +61,7 @@ export default {
         name: 'Bruno Rodrigo',
         description: 'Vestibulum fermentum elit nec odio luctus, vel feugiat justo tristique. Vestibulum eu hendrerit velit, vel egestas nunc. Integer luctus interdum eros, ac tincidunt arcu tristique ac. In in elit vel metus eleifend vulputate. Sed ut leo ornare purus rutrum facilisis elementum sed magna. Proin venenatis diam ac ex gravida, ac consectetur velit bibendum.'
       },
-    ]
+    ])
   }
-}
+
+  export default getTeachersList;
