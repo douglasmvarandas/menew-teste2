@@ -4,6 +4,7 @@ import { Container, Spinner } from '../components/Spinner/styles';
 import * as auth from '../services/auth';
 
 interface User {
+    name?:string;
     email:string;
     password?: string;
   }

@@ -1,6 +1,6 @@
-import React, { Children } from 'react';
+import React from 'react';
+import { Container, Wrapper } from './styles';
 
-import { Wrapper, Container } from './styles';
 
 interface Props {
   children: any;

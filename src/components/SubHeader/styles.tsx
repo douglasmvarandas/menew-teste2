@@ -6,7 +6,7 @@ export const Wrapper = styled.div`
   width: 100%;
   height: 3rem;
   background: #fff;
-  border-bottom: 1px solid #e4e7eb;
+  border-bottom: 3px solid #b62619;
 `;
 
 export const Container = styled.div`

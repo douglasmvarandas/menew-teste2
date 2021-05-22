@@ -1,12 +1,14 @@
 interface User {
   email:string;
   password: string;
+  name?: string;
 }
 
 const users = [
     {
-        email: 'example@example.com',
-        password: '123456'
+        email: 'ailton@example.com',
+        password: '123',
+        name: 'Ailton Sena'
     }
 ]
 
@@ -34,7 +36,8 @@ export async function signIn(user: User): Promise<any> {
         resolve({
           token: '1234n324on345n3213rb1bfouqo34322oub3',
           user: {
-            email: userObj.email
+            email: userObj.email,
+            name: userObj.name
           }
         })
       }, 2000);

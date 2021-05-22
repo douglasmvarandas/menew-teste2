@@ -1,6 +1,6 @@
-import styled from 'styled-components';
-import { IoIosArrowBack, IoIosArrowDropright } from 'react-icons/io';
+import { IoIosArrowBack } from 'react-icons/io';
 import { Link } from 'react-router-dom';
+import styled from 'styled-components';
 
 export const Container = styled.div`
   display: flex;
@@ -14,22 +14,22 @@ export const Crumb = styled.div`
 `;
 
 export const ArrowBack = styled(IoIosArrowBack)`
-  color: #edb512;
+  color: #b62619;
   margin-right: 5px;
 `;
 
 export const ArrowNext = styled(IoIosArrowBack)`
   margin: 5px;
-  color: #edb512;
+  color: #b62619;
   transform: rotate(180deg);
 `;
 
 export const LinkItem = styled(Link)`
   text-decoration: none;
-  color: #072e84;
+  color: #b62619;
   transition: all 0.2s;
   &:hover {
-    color: #001749;
+    color: #850b00;
   }
   &:active {
     color: #bbb;
