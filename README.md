@@ -18,3 +18,12 @@ Elaborar uma aplicação com React ou React Native (Android ou IOS) que atenda a
 Ps.: não precisa interagir com API para listar ou cadastrar informações, de maneira que as informações que serão apresentadas em tela podem ser definidas na própria aplicação.
  
 ...Boa Sorte!
+
+**Rodar Aplicação**
+Dados Fakes com Jason Server - rodar yarn ou npm run server
+Dados de login Abaixo:
+    {
+        email: 'ailton@example.com',
+        password: '123',
+        name: 'Ailton Sena'
+    }
