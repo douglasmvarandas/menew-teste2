@@ -23,8 +23,8 @@ export const Overlay = styled.div`
 
 export const LogBox = styled.form`
     background: #DC143C;
-    width: 27rem;
-    height: 30rem;
+    width: 29rem;
+    height: 31rem;
 
     position: relative;
 
@@ -115,8 +115,11 @@ export const ChecBox = styled.div`
 export const Buttons = styled.div`
     padding: 0.4rem;
 
+    margin: 0 auto;
+
     display: flex;
     align-items: center;
+    justify-content: center;
 
     button {
         margin-left: 2.5rem;
@@ -133,7 +136,7 @@ export const Buttons = styled.div`
 
         text-align: center;
 
-        margin-top: 1rem;
+        margin-top: 2.2rem;
 
         cursor: pointer;
 

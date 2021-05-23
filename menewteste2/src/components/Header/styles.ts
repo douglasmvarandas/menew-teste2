@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
 export const Container = styled.header`
-    background: var(--backgroundMenus);
+ background: var(--backgroundMenus);
 
-    margin: 0 auto;
+ margin: 0 auto;
 
 
 display: flex;
@@ -11,10 +11,11 @@ align-items: center;
 `;
 
 export const Content = styled.div`
-    max-width: 1310px;
+    max-width: 1120px;
     margin: 0 auto;
 
     padding: 1rem 1rem 0.75rem;
+
 
     display: flex;
     align-items: center;
@@ -36,6 +37,9 @@ button {
     padding: 0 2rem;
     height: 2rem;
 
+    margin: 1rem;
+
+   
     background: var(--Button);
 
     cursor: pointer;

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Container, Content, } from "./styles";
 import LogoImg from '../../assets/menew-bymv.png';
 import { TelaLog } from "../Login/Login";
+import { BrowserRouter } from "react-router-dom";
 
 interface TelaLogprops {
     title: string;
@@ -20,5 +21,5 @@ export function Header() {
                  {isModalVisible ? <TelaLog onClose={() => setIsModalVisible(false)}/>: null}
             </Content>
          </Container>
-    )
+     )
 }

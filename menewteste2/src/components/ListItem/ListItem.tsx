@@ -8,10 +8,11 @@ import Moderno from '../../assets/Moderninho.jpg';
 import Pig from '../../assets/PigAustralian.jpg';
 import Salada from '../../assets/Saladuplo.jpg';
 import Simple from '../../assets/Simplao.jpg';
+import { BrowserRouter } from 'react-router-dom';
 
 export function ListItem() {
     return (
-        <>
+        <BrowserRouter>
         <Item>
             <Content>
                 <img src={FomeZero} alt="Combo Fome Zero"/>
@@ -56,6 +57,6 @@ export function ListItem() {
                     <span>Simplão de Tudo</span>
                 </Content>
             </Item>
-            </>
+            </BrowserRouter>
     )
 }
