@@ -19,7 +19,7 @@ const Stack = createStackNavigator();
 const App: () => Node = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator  headerMode="none">
       <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Home" component={Tabs} />
         <Stack.Screen name="Cadastro" component={Cadastro} />

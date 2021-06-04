@@ -1,35 +1,53 @@
 import React from 'react';
 import {
-    SafeAreaView,
-    ScrollView,
-    TextInput,
-    View,
-    Button,
-  } from 'react-native';
+  SafeAreaView,
+  ScrollView,
+  TextInput,
+  View,
+  Text,
+  TouchableHighlight,
+  Image,
+} from 'react-native';
 
-const Login: () => Node = ({ navigation }) => {
-    return (
-      <SafeAreaView>
-        <ScrollView>
-          <View>
-          <TextInput placeholder="E-mail" />
-          <TextInput placeholder="CPF" />
-          <Button
-            title="Entrar"
-            color="#841584"
-            onPress={() => navigation.replace('Home')}
-             accessibilityLabel="Learn more about this purple button"
-            />
-            <Button
-            title="Cadastrar"
-            color="#841584"
-            onPress={() => navigation.replace('Cadastro')}
-             accessibilityLabel="Learn more about this purple button"
-  />
+import loginCss from '../../style/Login';
+
+const Login: () => Node = ({navigation}) => {
+  return (
+    <SafeAreaView>
+      <ScrollView style={loginCss.container}>
+        <View>
+          <View style={{alignItems: 'center'}}>
+          <Image style={loginCss.img} source={require('../../assets/images/logo.png')} />
           </View>
-        </ScrollView>
-      </SafeAreaView>
-    );
-  };
+          <TextInput
+            placeholder="E-mail"
+            placeholderTextColor={loginCss.background.color}
+            style={loginCss.background}
+          />
+          <TextInput
+            placeholder="Senha"
+            placeholderTextColor={loginCss.background.color}
+            style={loginCss.background}
+            secureTextEntry={true}
+          />
+          <TouchableHighlight
+            style={loginCss.buttons}
+            onPress={() => navigation.replace('Home')}>
+            <View>
+              <Text style={loginCss.buttons}>Entrar</Text>
+            </View>
+          </TouchableHighlight>
+          {/* <TouchableHighlight
+            style={loginCss.buttons}
+            onPress={() => navigation.replace('Cadastro')}>
+            <View>
+            <Text style={loginCss.buttons}>Cadastrar</Text>
+            </View>
+          </TouchableHighlight> */}
+        </View>
+      </ScrollView>
+    </SafeAreaView>
+  );
+};
 
-  export default Login;
+export default Login;
