@@ -1,32 +1,41 @@
 import React from 'react';
-import {
-    SafeAreaView,
-    ScrollView,
-    TextInput,
-    View,
-    Button,
-  } from 'react-native';
+import {SafeAreaView, ScrollView, TextInput, View, Button, TouchableHighlight, Text, Image} from 'react-native';
 
-const Cadastro: () => Node = ({ navigation }) => {
-    return (
-      <SafeAreaView>
-        <ScrollView>
-          <View>
-          <TextInput placeholder="Nome" />
-          <TextInput placeholder="E-mail" />
-          <TextInput placeholder="CPF" />
-          <TextInput placeholder="Senha" textContentType="password" />
-          <TextInput placeholder="Confirmar Senha" textContentType="password" />
-          <Button
-            title="Entrar"
-            color="#841584"
-            onPress={() => navigation.replace('Home')}
-             accessibilityLabel="Learn more about this purple button"
-  />
+import style from '../../../style/pessoa/Cadastro';
+import loginCss from '../../../style/Login';
+
+const Cadastro: () => Node = ({navigation}) => {
+  return (
+    <SafeAreaView>
+      <ScrollView>
+        <View>
+          <View style={{alignItems: 'center'}}>
+            <Image style={style.img} source={require('../../../assets/images/logo.png')} />
           </View>
-        </ScrollView>
-      </SafeAreaView>
-    );
-  };
+          <TextInput style={style.background} placeholder="Nome" />
+          <TextInput style={style.background} placeholder="E-mail" />
+          <TextInput style={style.background} placeholder="CPF" />
+          <TextInput
+            style={style.background}
+            placeholder="Senha"
+            textContentType="password"
+          />
+          <TextInput
+            style={style.background}
+            placeholder="Confirmar Senha"
+            textContentType="password"
+          />
+          <TouchableHighlight
+              style={style.buttons}
+              onPress={() => navigation.replace('Home')}>
+            <View>
+              <Text style={style.buttons}>Entrar</Text>
+            </View>
+          </TouchableHighlight>
+        </View>
+      </ScrollView>
+    </SafeAreaView>
+  );
+};
 
-  export default Cadastro;
+export default Cadastro;

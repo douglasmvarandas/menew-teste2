@@ -1,32 +1,30 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
+import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
-    container:{
-        flex: 3,
-        flexDirection: 'row'
-    },
+  background: {
+    backgroundColor: '#fff',
+    color: '#000',
+    marginBottom: 10,
+    padding: 20,
+    borderRadius: 25,
+  },
 
-    super:{
-        marginTop: 0
-    },
+  buttons: {
+    flex: 2,
+    padding: 5,
+    alignItems: 'center',
+    backgroundColor: '#bc0723',
+    color: '#fff',
+    marginTop: 0,
+  },
 
-    scroll:{
-        marginBottom: 1,
-        padding: 16,
-        backgroundColor: '#fff'
-    },
-
-    textos: {
-        textAlignVertical: 'center',
-        fontSize: 15,
-        marginLeft: 10
-    },
-
-    img:{
-        width: 71, 
-        height:71
-    }
+  img: {
+    width: 150,
+    height: 170,
+    marginBottom: 12,
+    alignItems: 'center',
+  },
 });
 
-  export default styles;
+export default styles;
