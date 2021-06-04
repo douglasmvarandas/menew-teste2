@@ -7,23 +7,20 @@ import {
     Button,
   } from 'react-native';
 
-const Login: () => Node = ({ navigation }) => {
+const Cadastro: () => Node = ({ navigation }) => {
     return (
       <SafeAreaView>
         <ScrollView>
           <View>
+          <TextInput placeholder="Nome" />
           <TextInput placeholder="E-mail" />
           <TextInput placeholder="CPF" />
+          <TextInput placeholder="Senha" textContentType="password" />
+          <TextInput placeholder="Confirmar Senha" textContentType="password" />
           <Button
             title="Entrar"
             color="#841584"
             onPress={() => navigation.replace('Home')}
-             accessibilityLabel="Learn more about this purple button"
-            />
-            <Button
-            title="Cadastrar"
-            color="#841584"
-            onPress={() => navigation.replace('Cadastro')}
              accessibilityLabel="Learn more about this purple button"
   />
           </View>
@@ -32,4 +29,4 @@ const Login: () => Node = ({ navigation }) => {
     );
   };
 
-  export default Login;
+  export default Cadastro;

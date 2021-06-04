@@ -2,7 +2,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import React from 'react';
 import type {Node} from 'react';
 
-import Home from '../pages/Home';
+import Home from '../pages/pessoa/Home';
 
 const Tabs = createBottomTabNavigator();
 
