@@ -26,7 +26,7 @@ const Login: () => Node = ({navigation}) => {
         setErro('Preencha os campos necessários')
     }
     else {
-      setErro('Informações inválidas, por favor tente novamente');
+      navigation.replace("Home");
     }
    
   }

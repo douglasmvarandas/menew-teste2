@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#bc0723',
     marginBottom: 2,
     color: '#fff',
-    marginTop: 8,
+    marginTop: 1,
   },
 
   img: {

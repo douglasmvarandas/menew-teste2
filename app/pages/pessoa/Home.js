@@ -6,17 +6,17 @@ import style from '../../../style/pessoa/Home';
 const DATA = [
   {
     id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
-    title: 'Talles',
+    title: 'Menew',
     photo: require('../../../assets/images/logo.png')
   },
   {
     id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
-    title: 'Kevin',
+    title: 'Menew1',
     photo: require('../../../assets/images/logo.png')
   },
   {
     id: '58694a0f-3da1-471f-bd96-145571e29d72',
-    title: 'Inchado',
+    title: 'Menew2',
     photo: require('../../../assets/images/logo.png')
   },
 
@@ -27,13 +27,13 @@ const DATA = [
   },
   {
     id: '58694a0f-3da1-471f-bd96-145571e29d74',
-    title: 'Inchado',
+    title: 'Menew3',
     photo: require('../../../assets/images/logo.png')
   },
 
   {
     id: '58694a0f-3da1-471f-bd96-145571e29d75',
-    title: 'Inchado',
+    title: 'Menew4',
     photo: require('../../../assets/images/logo.png')
   }
 ];
