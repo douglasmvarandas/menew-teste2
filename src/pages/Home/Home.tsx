@@ -20,7 +20,7 @@ function Home() {
         {
           nome: "Barca de sushi",
           descricao: "Sashime de Salmão, Sashimi de Atum, Nigiri de Salmão",
-          foto: "https://lojanakayoshi.com.br/wp-content/uploads/2020/06/barca-sushi-kobe-nakayoshi.png"
+          foto: "../../assets/sushi-boat.jpg"
       }
     ]
 
