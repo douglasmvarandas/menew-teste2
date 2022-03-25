@@ -8,9 +8,9 @@ Para submeter o seu projeto, **faça um fork** deste repositório e realize um *
 
 **Questão:**
 
-Elaborar uma aplicação com ReactJS (Android ou IOS) que atenda aos seguintes requisitos:
+Elaborar uma aplicação com ReactJS que atenda aos seguintes requisitos:
 
- - apresentar um menu inferior para navegação;
+ - apresentar um menu de navegação;
  - apresentar uma tela de login;
  - apresentar uma tela de cadastro de usuário com os campos: nome, email e CPF;
  - disponibilizar uma lista de produtos com nome, descrição e foto.
