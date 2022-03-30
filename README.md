@@ -1,5 +1,5 @@
 <div align="center">
-<h2>Seja bem vindo ao seu</h2>
+<h3>Seja bem vindo ao seu</h3>
 
 <img src=".github/Logo.svg" width="200">
 
