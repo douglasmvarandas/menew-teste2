@@ -12,10 +12,16 @@ export const useApi = ()=>({
 
     },
     signin: async(email:string,password:string)=>{
+
+        return{
+            user:{id:3,name:'kauan',email:'kauan_20@hotmail.com',token:'1536985'}
+        }
         const response = await api.post('/sigin', {email,password})
         return response.data
 
     },
+
+    
     logout:async () => {
         const response = await api.post('/logout')
         return response.data

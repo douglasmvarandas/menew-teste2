@@ -1,14 +1,100 @@
 .App {
   text-align: center;
+  
 }
 
 nav a {
-  color:#000;
+  color:#fff;
   display: inline-block;
   margin:0px 10px;
 }
 
 nav a:hover{
   text-decoration: none;
+}
+
+body{
+  background-color: #121214;
+  color:white;
+}
+.corpo{
+  background-color: #29292E;
+  border-radius: 5px;
+  width: 500px;
+  height: 500px;
+  padding: 20px;
+  margin: auto;
+  margin-top: 20px;
+}
+
+h1{
+  font-family: 'Roboto slab';
+  font-size: 50px;
+}
+h4{
+  font-family:'Roboto slab';
+  font-weight: 500;
+  margin-top: 40px;
+  font-size: 15px;
+  color:#e1e1e6;
+}
+
+.inputEmail{
+  color:gray;
+  background-color: #1a1a1d;
+  border-radius: 3px;
+  padding: 3px;
+  width: 400px;
+  height: 50px;
+  margin: auto;
+  margin-bottom: 20px;
+
+}
+
+.inputSenha{
+  color:gray;
+  background-color: #1a1a1d;
+  border-radius: 3px;
+  padding: 3px;
+  width: 400px;
+  height: 50px;
+  margin: auto;
+
+}
+
+input{
+  background: transparent;
+  outline: 0;
+  color: #e1e1e6;
+  border: none;
+  font-size: 17px;
+  margin-left: 20px;
+  margin-right: 10px;
+
+}
+
+button{
+  width:400px;
+  background-color: #202024;
+  color:#eff2f5;
+  font-weight: 700;
+  height: 50px;
+  border-radius: 5px;
+  font-size: 18px;
+  margin-top: 10px;
+  cursor: pointer;
+  border:none;
+}
+
+button:hover{
+  background-color: #171719;
+  color:#eff2f5;
+
+}
+
+.login-emoji{
+  margin-left: 300px;
+  margin-top: -20px;
+  cursor: pointer;
 }
 
