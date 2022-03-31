@@ -5,7 +5,7 @@ import {HiEye,HiEyeOff} from 'react-icons/hi'
 export const Cadastro =()=>{
     const [password,setPassword] = useState('')
     const [show,setShow]=useState(false)
-    const handleClick = (e:Event)=>{
+    const handleClick = (e:any)=>{
         e.preventDefault()
         setShow(!show)
     }
@@ -67,12 +67,12 @@ export const Cadastro =()=>{
                     <div className='login-emoji'>
                         {show?(
                             <HiEye
-                            onClick={()=>handleClick}
+                            onClick={handleClick}
                             />
                             
                         ):(
                             <HiEyeOff
-                            onClick={()=>handleClick}
+                            onClick={handleClick}
                             
                             />
                         )
