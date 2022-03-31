@@ -97,4 +97,24 @@ button:hover{
   margin-top: -20px;
   cursor: pointer;
 }
+.itens{
+ width:350px;
+ margin:auto;
+}
 
+.itens li {
+ 
+  display:flex;
+  margin-top: 20px;
+  
+  justify-content: space-between;
+}
+
+.edit{
+  margin-right: 10px;
+  cursor:pointer;
+}
+.delete{
+  color:#f04c64;
+  cursor:pointer;
+}

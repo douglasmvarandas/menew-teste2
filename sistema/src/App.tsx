@@ -2,6 +2,7 @@ import './App.css';
 import {Routes, Route, Link} from 'react-router-dom';
 import {Home} from './pages/Home';
 import { Cadastro } from './pages/Cadastro';
+import Itens from './pages/Itens';
 
 import {Privada} from './pages/Privada';
 import { RequireAuth } from './contexto/Auth/RequireAuth';
@@ -24,6 +25,7 @@ function App() {
         <Route path="/Privada" element={<RequireAuth><Privada /></RequireAuth>
         } />
         <Route path="/Cadastro" element={<Cadastro/>}/>
+        <Route path="/Itens" element={<Itens/>}/>
       </Routes>
 
       
