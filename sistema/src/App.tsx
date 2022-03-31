@@ -15,8 +15,8 @@ function App() {
   return (
     <div className="App">
       <nav>
-        <Link to="/">Home</Link>
-        <Link to="/Privada">Privada</Link>
+        <Link to="/">Login</Link>
+        <Link to="/">Logout</Link>
         {auth.user && <a href='javascript:;'>Sair</a>}
       </nav>
       <hr></hr>

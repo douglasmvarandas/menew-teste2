@@ -1,8 +1,26 @@
-import react,{Component} from 'react'
+import {Component} from 'react'
 import {FaEdit,FaWindowClose} from 'react-icons/fa'
 
 
 export default class Itens extends Component{
+
+    componentDidMount(){
+
+        const itens = JSON.parse(localStorage.getItem('itens')||'[]')
+        if(!itens) return
+
+        this.setState({itens})
+
+    }
+
+    componentDidUpdate(prevProps:any,prevState:any){
+        const {itens}= this.state
+        if(itens===prevState.itens)return;
+        localStorage.setItem('itens', JSON.stringify(itens))
+
+
+        
+    }
 
     state={
         novoItem:'',
@@ -71,12 +89,12 @@ export default class Itens extends Component{
         const {novoItem,itens} = this.state
         return(
             <div className="lista">
-            <h1>Lista de Itens disponivéis</h1>
+            <h1>Lista de Itens</h1>
             <form onSubmit={this.handleOnSubmit}>
                 <div className='inputEmail'>
                     <input type="text" onChange={this.handleChange} value={novoItem} placeholder="Digite algo "/>
                 </div>
-                <button type="submit">Editar</button>
+                <button type="submit">Adicionar</button>
             </form>
            <ul className='itens'>
                {itens.map((item, index)=>(

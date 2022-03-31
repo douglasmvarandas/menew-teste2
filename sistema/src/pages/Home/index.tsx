@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import {useState} from 'react'
 import {MdEmail,MdLock} from 'react-icons/md'
 import {HiEye,HiEyeOff} from 'react-icons/hi'
 
@@ -8,25 +8,26 @@ export const Home =()=>{
     const [password,setPassword] = useState('')
     const [show,setShow]=useState(false)
 
-    const handleClick = (e:Event)=>{
+    const handleClick = (e:any)=>{
         e.preventDefault()
         setShow(!show)
     }
-
+    const cadastrar =()=>{
+        setTimeout(window.location.href="./cadastro")
+    }
    const entrar=()=>{
-       //let email=document.querySelector('#email' as unknown as HTMLInputElement).value
-       //let senha= document.querySelector('#senha' as unknown HTMLInputElement).value
+      
        let listaUser= []
        let userValid = {
            nome:'',
            cpf:'',
-           email:'',
+           email:'z',
            senha:''
        }
 
        listaUser = JSON.parse(localStorage.getItem('listaUser')||'[]')
        listaUser.forEach((item:any)=>{
-           if(email == item.email && password == item.senha){
+           if(email === item.email && password === item.senha){
                userValid={
                    email:item.email,
                    nome:item.nome,
@@ -37,8 +38,8 @@ export const Home =()=>{
        })
         
        console.log(userValid)
-       if(email==userValid.email&& password==userValid.senha){
-           alert('acesso liberado')
+       if(email===userValid.email&& password===userValid.senha){
+           window.location.href="/itens"
        }else{
            alert('Acesso negado!')
        }
@@ -61,11 +62,11 @@ export const Home =()=>{
                     <div className='login-emoji'>
                     {show?(
                         <HiEye
-                        onClick={()=>handleClick}
+                        onClick={handleClick}
                         />
                     ):(
                         <HiEyeOff
-                        onClick={()=>handleClick}
+                        onClick={handleClick}
                         />
                     ) 
                     }
@@ -74,7 +75,7 @@ export const Home =()=>{
                 
                 <button type='submit' onClick={entrar}>Entrar</button>
                 <h4>Não tenho conta</h4>
-                <button type='submit'>Cadastrar</button>
+                <button type='submit' onClick={cadastrar}>Cadastrar</button>
             </div>
 
         </div>
