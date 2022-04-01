@@ -51,7 +51,7 @@ export const products = {
     {
       id: 9,
       name: "Abacaxi",
-      description: "Fruta Abacaxi",
+      description: "Fruto Abacaxi",
       img: "https://jundiagora.com.br/wp-content/uploads/2018/10/DETOX.jpg",
     },
     {
@@ -63,7 +63,7 @@ export const products = {
     {
       id: 11,
       name: "Abóbora",
-      description: "Fruta Abóbora",
+      description: "Fruto Abóbora",
       img: "https://www.infoescola.com/wp-content/uploads/2010/07/ab%C3%B3boras_721235911.jpg",
     },
     {
