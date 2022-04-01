@@ -19,12 +19,12 @@ A idea do **Cardap.io** consiste em uma plataforma (simples) ao qual o usuário 
 
 **Menu**
 
-- [ ] Barra de navegação
+- [x] Barra de navegação
 
 **Usuários**
 
-- [ ] Cadastro de usuários
-- [ ] Login de usuários
+- [x] Cadastro de usuários
+- [x] Login de usuários
 
 **Produtos**
 
@@ -37,7 +37,7 @@ A idea do **Cardap.io** consiste em uma plataforma (simples) ao qual o usuário 
 
 **Usuários**
 
-- [ ] Logout de usuários
+- [x] Logout de usuários
 
 **Filtros _(Produtos)_**
 
