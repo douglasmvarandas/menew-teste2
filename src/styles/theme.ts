@@ -1,6 +1,20 @@
 import { createTheme } from '@mui/material/styles';
 
 let theme = createTheme({
+  typography: {
+    fontFamily: [
+      '-apple-system',
+      'Montserrat',
+      '"Segoe UI"',
+      'Roboto',
+      '"Helvetica Neue"',
+      'Arial',
+      'sans-serif',
+      '"Apple Color Emoji"',
+      '"Segoe UI Emoji"',
+      '"Segoe UI Symbol"',
+    ].join(','),
+  },
   palette: {
     primary: {
       main: '#D10025',
