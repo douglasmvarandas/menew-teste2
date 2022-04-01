@@ -1,6 +1,5 @@
 import React from 'react';
 import { Card, Image, Title, Descricao, ProductContainer, Button, TitleDescriptionContainer } from './styles';
-// import { produtos } from '../../data';
 import { useNavigate } from "react-router-dom";
 import { connect } from 'react-redux';
 import itemActions from '../../redux/itens/actions';

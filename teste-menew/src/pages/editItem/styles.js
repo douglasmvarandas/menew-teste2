@@ -7,46 +7,62 @@ export const Container = styled.div`
     background-color: #f5f5f5;
     height: 100vh;
     width: 100%;
-
 `;
 
 export const Input = styled.input`
-    width: 100%;
-    height: 40px;
+    border: none;
     border-radius: 5px;
-    border: 1px solid #ccc;
-    padding: 0 10px;
-    margin-bottom: 10px;
+    padding: 10px;
+    margin-top: 10px;
+    width: 400px;
+    height: 25px;
+    background-color: #661dff;
+    font-size: 16px;
+    font-weight: bold;
+    color: #d6d6d6;
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &:hover {
+        background-color: #d6d6d6;
+        color: #661dff;
+    }
 
     &:focus {
-        border: 1px solid #000;
-    }
-
-    &::placeholder {
-        color: #ccc;
-    }
-
-    &:disabled {
-        background-color: #ccc;
+        outline: none;
+        background-color: #d6d6d6;
+        color: #661dff;
     }
     
+    @media (max-width: 1200px) {
+        width: 50%;
+        font-size: 14px;
+        }
 `;
 
 export const EditButton = styled.button`
-    width: 100%;
-    height: 40px;
+    border: none;
     border-radius: 5px;
-    border: 1px solid #ccc;
-    padding: 0 10px;
-    margin-bottom: 10px;
-    background-color: #ccc;
-    color: #000;
+    padding: 10px;
+    margin-top: 40px;
+    height: 15%;
+    width: 60%;
+    background-color: #661dff;
+    font-size: 16px;
     font-weight: bold;
+    color: #d6d6d6;
     cursor: pointer;
+    transition: all 0.2s;
 
-    &:focus {
-        border: 1px solid #000;
+    &:hover {
+        background-color: #d6d6d6;
+        color: #661dff;
     }
+
+    @media (max-width: 1200px) {
+        width: 50%;
+        font-size: 14px;
+        }
 `;
 
 export const ItemInputContainer = styled.div`
@@ -91,12 +107,29 @@ export const Card = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #f5f5f5;
+    background-color: white;
+    width: 40%;
+    height: 50%;
+    padding: 20px;
+    border : 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    
+
+    @media (max-width: 1200px) {
+        width: 50%;
+        font-size: 14px;
+        }
+
+    @media (max-width: 600px) {
+        width: 80%;
+        font-size: 12px;
+        }
 `;
 
 export const Image = styled.img`
-    width: 100%;
-    height: 100%;
+    width: 100px;
+    height: 100px;
     max-width: 300px;
     max-height: 300px;
     border-radius: 5px;

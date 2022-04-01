@@ -97,5 +97,11 @@ export const Input = styled.input`
         background-color: #d6d6d6;
         color: #661dff;
     }
+
+    &:focus {
+        outline: none;
+        background-color: #d6d6d6;
+        color: #661dff;
+    }
     
 `;

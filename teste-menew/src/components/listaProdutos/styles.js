@@ -102,4 +102,5 @@ export const Button = styled.button`
 
     @media (max-height: 800px) {
         font-size: 10px;
-`;
+    }
+        `;

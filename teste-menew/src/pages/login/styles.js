@@ -71,6 +71,7 @@ export const Card = styled.div`
     @media (max-width: 850px) {
         width: 40%;
     }
+    
 `;
 
 export const Input = styled.input`
@@ -88,6 +89,12 @@ export const Input = styled.input`
     transition: all 0.2s;
 
     &:hover {
+        background-color: #d6d6d6;
+        color: #661dff;
+    }
+
+    &:focus {
+        outline: none;
         background-color: #d6d6d6;
         color: #661dff;
     }
