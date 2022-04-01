@@ -1,10 +1,12 @@
-
+import GlobalStyle from "./styles/global";
+import {MainRoutes} from "./routes";
 
 function App() {
 
   return (
    <>
-    <h1>App</h1>
+    <GlobalStyle />
+    <MainRoutes />
    </>
   )
 }
