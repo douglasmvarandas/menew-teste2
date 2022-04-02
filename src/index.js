@@ -1,13 +1,15 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import Navigation from "../src/Navigation";
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import Navigation from "./navigation/index";
+import './global.css';
 
-import './Global.css';
+const rootElement = document.getElementById("root");
+const root = createRoot(rootElement);
 
-
-ReactDOM.render(
-  <React.StrictMode>
+root.render(
+  <StrictMode>
     <Navigation />
-  </React.StrictMode>,
+  </StrictMode>,
   document.getElementById('root')
 );
