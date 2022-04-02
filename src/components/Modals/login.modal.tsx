@@ -13,7 +13,7 @@ import { LOGIN_MODAL_TITLE, ERROR_LOGIN_MESSAGE, SUCESS_LOGIN_GREETING_MESSAGE }
 import { ToastInitialState } from '../Toast'
 
 import { useDispatch, useSelector } from 'react-redux';
-import { loginUser } from '../../reducers/user/user.slice';
+import { loginUser } from '../../reducers/slices/user.slice';
 
 interface ModalProps {
     open: boolean;

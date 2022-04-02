@@ -21,7 +21,8 @@ import APP_PAGES from '../../routes/pages.routes'
 import GradientButton from '../GradientButton';
 import { SignUpModal, LoginModal } from '../../components/Modals'
 import { useDispatch, useSelector } from 'react-redux';
-import { logoutUser } from '../../reducers/user/user.slice';
+import { logoutUser } from '../../reducers/slices/user.slice';
+import { Offset } from './styles';
 
 interface Props {
     children: ReactElement
@@ -222,7 +223,7 @@ export default function ({ children }: Props) {
                     </Toolbar>
                 </Container>
             </AppBar >
-            <main>{children}</main>
+            <Offset>{children}</Offset>
         </>
     );
 };

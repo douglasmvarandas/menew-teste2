@@ -12,7 +12,7 @@ import { SIGNUP_MODAL_TITLE, SUCESS_SIGNUP_MESSAGE, ERROR_SIGNUP_MESSAGE } from 
 import Toast, { ToastInitialState } from '../Toast'
 
 import { useDispatch, useSelector } from 'react-redux';
-import { registerUser } from '../../reducers/user/user.slice';
+import { registerUser } from '../../reducers/slices/user.slice';
 import { iUser } from '../../db'
 
 interface ModalProps {
