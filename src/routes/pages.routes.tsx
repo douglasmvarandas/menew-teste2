@@ -1,22 +1,22 @@
-function HelloWorld() {
-  return <div>Hello World</div>;
-}
+import DrinksPage from '../pages/Drinks'
+import RestaurantsPage from '../pages/Restaurants'
+import SnacksPage from '../pages/Snacks'
 
 const APP_ROUTES = [
   {
     label: 'Bebidas',
     path: '/',
-    component: <HelloWorld />,
+    component: <DrinksPage />,
   },
   {
     label: 'Lanches',
     path: 'snacks',
-    component: <HelloWorld />,
+    component: <SnacksPage />,
   },
   {
     label: 'Restaurantes',
     path: 'restaurants',
-    component: <HelloWorld />,
+    component: <RestaurantsPage />,
   },
 ];
 

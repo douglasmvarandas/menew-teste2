@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import './styles/index.css'
 
 import { Provider } from 'react-redux'
-import userStore from './reducers/user/user.store'
+import userStore from './reducers/store.reducer'
 
 import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
