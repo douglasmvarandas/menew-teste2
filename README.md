@@ -28,7 +28,7 @@ A idea do **Cardap.io** consiste em uma plataforma (simples) ao qual o usuário 
 
 **Produtos**
 
-- [ ] Listagem de produtos
+- [X] Listagem de produtos
 - [ ] Edição de produtos
 
 ---
