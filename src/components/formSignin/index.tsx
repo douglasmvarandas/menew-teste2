@@ -3,13 +3,16 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import { schema } from "./validate";
 import { Button } from "../../components/button"
-import { useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
-import { signinThunks } from "../../store/signin/thunk"
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
 import { Input } from "../input";
+import { filterUserThunks, userProps } from "../../store/user/thunk";
+import { User } from "./type";
 
 export const FormSignin = () => {
+  const navigate = useNavigate()
   const dispatch = useDispatch();
+  const user = useSelector((state: User) => state.user)
 
   const {
     register,
@@ -20,10 +23,15 @@ export const FormSignin = () => {
     resolver: yupResolver(schema),
   });
 
-  const onSubmitData = (data: any) => {
-    dispatch(signinThunks(data));
-    reset();
+  const onSubmitData = (data: userProps) => {
+    const {email, cpf} = data
+    dispatch( filterUserThunks(email))
+    if(user.length > 0 && user[0].cpf == cpf){
+      navigate("/dashboard")
+      reset()
+    }
   };
+
   return (
     <>
       <FormComponentLogin onSubmit={handleSubmit(onSubmitData)}>

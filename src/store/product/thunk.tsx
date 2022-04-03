@@ -29,7 +29,7 @@ export const allProductsThunk = () => {
 export const productUpdateThunk = (id: string, data: ThunkProductProps) => {
   return (dispatch: Dispatch) => {
     api.get(`/products/${id}`, data).then(response => {
-      dispatch(list(response.data))
+      dispatch(oneProduct(response.data))
     })
   }
 }

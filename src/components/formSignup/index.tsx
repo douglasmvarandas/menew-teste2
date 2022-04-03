@@ -4,14 +4,15 @@ import { schema } from "./validate";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { FooterSignup, FormUser } from "./style";
-import { userThunks, userProps } from "../../store/user/thunk"
-import { Link } from "react-router-dom";
+import { userProps } from "../../store/user/thunk"
+import { Link, useNavigate } from "react-router-dom";
 import { Button } from "../button";
-
+import api from "../../services/api";
 
 
 export const FormSignup = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate()
 
   const {
     register,
@@ -20,12 +21,18 @@ export const FormSignup = () => {
     formState: { errors },
   } = useForm({
     resolver: yupResolver(schema),
+   
   });
 
-  const onSubmitData = (data: userProps) => {
-    dispatch(userThunks(data));
-    reset();
-  };
+  const onSubmitData = async (data: userProps) => {
+    try{
+      const user = await api.post("/user", data)
+      console.log(user)
+    }catch (err){
+      console.log(err)
+    }
+    navigate("/")
+  }
 
   return (
     <>
@@ -54,8 +61,8 @@ export const FormSignup = () => {
           register={register}
           error={errors.cpf?.message}
         />
-        <Button type="submit" name="Enviar">
-          Enviar
+        <Button type="submit" name="Cadastrar">
+          Cadastrar
         </Button>
         <FooterSignup>
         <span>
