@@ -52,7 +52,7 @@ export const FormSignin = () => {
           <span>
             Ainda não tem uma conta? 
           </span>
-          <Link to="/register">Cadastre-se</Link>
+          <Link to="/signup">Cadastre-se</Link>
         </FooterSignin>
       </FormComponentLogin>
     </>

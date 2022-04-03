@@ -1,7 +1,18 @@
+import { FormSignin } from "../../components/formSignin";
+import { FormContainer, ImgContainer, LoginContainer } from "./style";
+import signin from "../../assets/signin.svg"
+
 export const Signin = () => {
   return (
     <>
-      <h1>Signin</h1>
+      <LoginContainer>
+        <ImgContainer>
+          <img src={signin} alt="login" />
+        </ImgContainer>
+        <FormContainer>
+          <FormSignin />
+        </FormContainer>
+      </LoginContainer>
     </>
   )
 }
