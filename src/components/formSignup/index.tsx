@@ -1,5 +1,4 @@
 import { Input } from "../input";
-import {Button} from "../button"
 import { yupResolver } from "@hookform/resolvers/yup";
 import { schema } from "./validate";
 import { useForm } from "react-hook-form";
@@ -7,6 +6,7 @@ import { useDispatch } from "react-redux";
 import { FormUser } from "./style";
 import { userThunks, userProps } from "../../store/user/thunk"
 import { Link } from "react-router-dom";
+import { Button } from "../button";
 
 
 
