@@ -1,6 +1,7 @@
 import { user } from "./action";
 import { Dispatch } from 'redux'
 import api from "../../services/api";
+import { useDispatch } from "react-redux";
 
 export interface userProps {
   name?: string, 
@@ -9,10 +10,12 @@ export interface userProps {
 }
 
 export const userThunks = (data: userProps) => {
+  const redirect = useDispatch()
   return (dispatch: Dispatch) => {
     api.post("/user", data).then((response) => {
       dispatch(user(response.data));
     });
+    redirect("/")
   };
 };
 
