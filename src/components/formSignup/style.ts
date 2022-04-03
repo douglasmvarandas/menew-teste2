@@ -13,3 +13,18 @@ export const FormUser = styled.form`
     font-size: 12px;
   }
 `;
+
+export const FooterSignup = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+  a{
+    font-size: 13px;
+    text-decoration: none;
+    color: #00A09A;
+  }
+  span{
+    color: #ccc;
+  }
+`

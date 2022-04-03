@@ -1,9 +1,5 @@
 import styled from "styled-components";
 
-interface InputContainerStyledProps {
-  colorSchema?: boolean;
-  borderSchema?: boolean;
-}
 
 export const Container = styled.div`
   text-align: center;
@@ -15,23 +11,21 @@ export const Container = styled.div`
   }
 `;
 
-export const InputContainer = styled.div<InputContainerStyledProps>`
-  background: ${(props) =>
-    props.colorSchema ? "#fff" : "transparent"};
-  border-radius: 5px;
-  border: ${(props) =>
-    props.borderSchema
-      ? "2px solid #ccc"
-      : "2px solid #fff"};
-  color: #A9A9A9;
-  padding: 1rem;
+export const InputContainer = styled.div`
+  
   width: 100%;
   display: flex;
+  margin: 5px 0;
+  border-bottom: 1px solid #ccc;
+  color: #A9A9A9;
+  padding: 10px;
 
   input {
-    background: transparent;
     width: 100%;
+    background: transparent;
     border: none;
-    align-items: center;
+    ::placeholder{
+      color:rgba(0, 0, 0, 0.5);
+    } 
   }
 `;

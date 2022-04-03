@@ -3,14 +3,14 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { schema } from "./validate";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
-import { FormUser } from "./style";
+import { FooterSignup, FormUser } from "./style";
 import { userThunks, userProps } from "../../store/user/thunk"
 import { Link } from "react-router-dom";
 import { Button } from "../button";
 
 
 
-export const FormSgnup = () => {
+export const FormSignup = () => {
   const dispatch = useDispatch();
 
   const {
@@ -57,9 +57,12 @@ export const FormSgnup = () => {
         <Button type="submit" name="Enviar">
           Enviar
         </Button>
+        <FooterSignup>
         <span>
-          Já possui uma conta? <Link to="/">Cadastre-se</Link>
+          Já possui uma conta? 
         </span>
+          <Link to="/">Entrar</Link>
+        </FooterSignup>
       </FormUser>
     </>
   );
