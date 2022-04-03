@@ -8,7 +8,7 @@ export const Navbar = styled.nav`
 
     position: fixed;
     top: 0;
-
+    
     display: flex;
     flex-direction: row;
     justify-content: space-between;

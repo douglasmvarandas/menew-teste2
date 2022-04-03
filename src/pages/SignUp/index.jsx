@@ -1,10 +1,12 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { LOGIN, DASHBOARD } from "../../navigation/routes"
+
 import { Container } from './styles';
 import Logo from '../../assets/menew_logo.png';
+
 import ButtonComponent from "../../components/Button/index";
 import InputComponent from "../../components/Input/index";
-import { LOGIN, DASHBOARD } from "../../navigation/routes"
 
 const SignUp = () => {
     const navigate = useNavigate();

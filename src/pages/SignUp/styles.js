@@ -26,19 +26,19 @@ export const Container = styled.section`
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
         
         > img {
-        width: 50%;
-        height: 70%;   
+            width: 50%;
+            height: 70%;   
         }
 
         > form {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: flex-end;
-        
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: flex-end;
+            
 
-        width: 50%;
-        height: 100%;
+            width: 50%;
+            height: 100%;
         }
 
         @media (max-width: 915px) {

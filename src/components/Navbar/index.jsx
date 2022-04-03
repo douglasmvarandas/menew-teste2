@@ -1,12 +1,14 @@
 import React from 'react';
-import { Navbar } from './styles';
-import Logo from '../../assets/menew_logo.png';
 import { useNavigate } from 'react-router-dom';
+import { LOGIN } from "../../navigation/routes";
+
+import Logo from '../../assets/menew_logo.png';
+import { Navbar } from './styles';
+
 import { Search, SearchIconWrapper, StyledInputBase } from './stylesInputSearch';
 import SearchIcon from '@mui/icons-material/Search';
-import IconButton from '@mui/material/IconButton';
 import LogoutIcon from '@mui/icons-material/Logout';
-import { LOGIN } from "../../navigation/routes";
+import IconButton from '@mui/material/IconButton';
 
 const NavBar = () => {
     const navigate = useNavigate();
