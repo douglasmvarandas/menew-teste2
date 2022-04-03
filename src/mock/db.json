@@ -1,0 +1,30 @@
+{
+  "user":[
+    {
+      "id": 1,
+      "name": "Pierre",
+      "email": "pierre@mail.com",
+      "cpf": "11122233344"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "TV Samsung",
+      "description": "",
+      "image": ""
+    },
+    {
+      "id": 2,
+      "name": "TV CCE",
+      "description": "",
+      "image": ""
+    },
+    {
+      "id": 3,
+      "name": "TV LG",
+      "description": "",
+      "image": ""
+    }
+  ]
+}
