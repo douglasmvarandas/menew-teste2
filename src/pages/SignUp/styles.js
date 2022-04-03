@@ -14,7 +14,7 @@ export const Container = styled.section`
 
    > div {
         width: 60%;
-        height: 70%;
+        height: 500px;
         padding: 10px;
 
         background: #fff;
@@ -43,8 +43,8 @@ export const Container = styled.section`
 
         @media (max-width: 915px) {
             flex-direction: column;
-            width: 80%;
-            height: 80%;
+            width: 90%;
+            height: 850px;
 
             > form {
                 width: 100%;
@@ -57,6 +57,15 @@ export const Container = styled.section`
         }
 
         @media (max-width: 620px) {
+
+            flex-direction: column;
+            width: 90%;
+            height: 550px;
+
+            > form {
+                width: 100%;
+            }
+
             > img {
                 width: 40%;
                 height: 30%;
