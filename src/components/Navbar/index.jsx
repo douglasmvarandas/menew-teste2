@@ -1,10 +1,38 @@
 import React from 'react';
+import { Navbar } from './styles';
+import Logo from '../../assets/menew_logo.png';
+import { useNavigate } from 'react-router-dom';
+import { Search, SearchIconWrapper, StyledInputBase } from './stylesInputSearch';
+import SearchIcon from '@mui/icons-material/Search';
+import IconButton from '@mui/material/IconButton';
+import LogoutIcon from '@mui/icons-material/Logout';
+import { LOGIN } from "../../navigation/routes";
 
 const NavBar = () => {
-    return (
-        <>
+    const navigate = useNavigate();
 
-        </>
+    return (
+        <Navbar>
+            <img src={Logo} alt="Logo Menew" />
+            <Search>
+                <SearchIconWrapper>
+                    <SearchIcon color="error" />
+                </SearchIconWrapper>
+                <StyledInputBase
+                    placeholder="Pesquise por produtos"
+                    inputProps={{ 'aria-label': 'search' }}
+                />
+            </Search>
+            <IconButton
+                edge="end"
+                aria-haspopup="true"
+                onClick={() => navigate(LOGIN)}
+                color="error"
+                title="Sair"
+            >
+                <LogoutIcon />
+            </IconButton>
+        </Navbar>
 
     );
 }

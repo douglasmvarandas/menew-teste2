@@ -41,6 +41,28 @@ export const Container = styled.section`
         height: 100%;
         }
 
+        @media (max-width: 915px) {
+            flex-direction: column;
+            width: 80%;
+            height: 80%;
+
+            > form {
+                width: 100%;
+            }
+
+            > img {
+                width: 50%;
+                height: 60%;
+            }
+        }
+
+        @media (max-width: 620px) {
+            > img {
+                width: 40%;
+                height: 30%;
+            }
+        }
+
 
     }
 

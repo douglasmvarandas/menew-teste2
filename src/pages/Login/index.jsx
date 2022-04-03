@@ -3,14 +3,21 @@ import { Container } from './styles';
 import Logo from '../../assets/menew_logo.png';
 import ButtonComponent from "../../components/Button/index";
 import InputComponent from "../../components/Input/index";
-import { SIGNUP } from "../../navigation/routes"
+import { SIGNUP, DASHBOARD } from "../../navigation/routes"
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
+    const navigate = useNavigate();
+
+    const submit = () => {
+        navigate(DASHBOARD);
+    }
+
     return (
         <Container>
             <div>
                 <img src={Logo} alt="Logo Menew" />
-                <form>
+                <form onSubmit={submit}>
                     <InputComponent
                         required={true}
                         fullWidth={true}
@@ -25,7 +32,12 @@ const Login = () => {
                         label="Senha"
                         type="password"
                     />
-                    <ButtonComponent content='ENTRAR' color='neutral' fullWidth={true} />
+                    <ButtonComponent
+                        content='ENTRAR'
+                        color='neutral'
+                        fullWidth={true}
+                        type='submit'
+                    />
                     <span>não tem cadastro? <a href={SIGNUP}>cadastre-se</a></span>
                 </form>
             </div>

@@ -13,11 +13,11 @@ const theme = createTheme({
 
 
 const ButtonComponent = (props) => {
-    const { content, color, fullWidth } = props;
+    const { content, color, fullWidth, type } = props;
 
     return (
         <ThemeProvider theme={theme}>
-            <Button color={color} variant="contained" fullWidth={fullWidth}>
+            <Button color={color} variant="contained" fullWidth={fullWidth} type={type}>
                 {content}
             </Button>
         </ThemeProvider>
