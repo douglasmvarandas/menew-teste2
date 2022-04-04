@@ -10,7 +10,7 @@ export const Header = () => {
     <>
       <Nav>
         <div>
-          Olá {user}
+          Olá, <span>{user}</span>
         </div>
         <Mobile />
       </Nav>

@@ -13,6 +13,11 @@ export const Nav = styled.div`
   padding: 5px;
   background: #00A09A;
 
+  span{
+    color: #fff;
+    font-size: 22px;
+  }
+
   @media (min-width: 768px){
     justify-content: space-around;
   }
