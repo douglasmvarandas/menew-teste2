@@ -1,6 +1,6 @@
-import { list, oneProduct, product } from "./action";
-import { Dispatch } from 'redux'
+import { list } from "./action";
 import api from "../../services/api";
+import { DataUpdateProps } from "../../components/formProductsUpdate/types";
 
 export interface ProductProps {
   name: string, description: string, image: string, id: number
@@ -18,10 +18,12 @@ export const allProductsThunk = () => {
   }
 }
 
-export const productUpdateThunk = (id: string, data: ThunkProductProps) => {
-  return (dispatch: Dispatch) => {
-    api.get(`/products/${id}`, data).then(response => {
-      dispatch(oneProduct(response.data))
+export const productUpdateThunk = (id: number, data: ThunkProductProps) => {
+  console.log(data)
+  console.log(id)
+  return (dispatch: any) => {
+    api.patch(`/products/${id}`, data).then(response => {
+      console.log(response)
     })
   }
 }

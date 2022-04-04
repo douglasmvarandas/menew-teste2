@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Card } from "../../components/card";
 import { FormProductUpdate } from "../../components/formProductsUpdate";
 import { Header } from "../../components/header";
-import { allProductsThunk, ProductProps } from "../../store/product/thunk";
+import { allProductsThunk } from "../../store/product/thunk";
 import { ProductContainer, ProductsBox } from "./style";
 import { ProductCardProps } from "./types";
 
@@ -12,7 +12,6 @@ export const Dashboard = () => {
   const productList = useSelector((state: ProductCardProps) => state.product)
   const [openModal, setOpenModal] = useState(false)
  
-  console.log(openModal)
   useEffect(() => {
     dispatch(allProductsThunk())
   },[])
@@ -24,7 +23,7 @@ export const Dashboard = () => {
         {openModal ? <FormProductUpdate modal={openModal} setModal={setOpenModal} /> : <></>}
         <ProductsBox>
           {productList.map(product => (
-            <Card product={product} setModal={setOpenModal}/>
+            <Card product={product} setModal={setOpenModal} key={product.id}/>
           ))}
         </ProductsBox>
       </ProductContainer>

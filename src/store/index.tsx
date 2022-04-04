@@ -9,7 +9,7 @@ const reducers = combineReducers({
   product: productReducer,
   signin: signinReducer,
   user: userReducer,
-  id : selectedIdReducer
+  productId : selectedIdReducer
 });
 
 const store = createStore(reducers, applyMiddleware(thunk));
