@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { SIGNUP, DASHBOARD } from "../../navigation/routes"
 
@@ -8,10 +8,18 @@ import Logo from '../../assets/menew_logo.png';
 import ButtonComponent from "../../components/Button/index";
 import InputComponent from "../../components/Input/index";
 
+import { useDispatch } from 'react-redux'
+import { setUser } from '../../redux/action/user.action'
+import { user_state } from '../../utils/constants';
+
 const Login = () => {
     const navigate = useNavigate();
+    const dispatch = useDispatch(setUser);
+
+    const [auth, setAuth] = useState(user_state);
 
     const submit = () => {
+        dispatch(setUser(auth))
         navigate(DASHBOARD);
     }
 
@@ -26,6 +34,8 @@ const Login = () => {
                         color="primary"
                         label="E-mail"
                         type="email"
+                        onChange={(e) => setAuth({ ...auth, email: e.target.value })}
+                        value={auth.email}
                     />
                     <InputComponent
                         required={true}
@@ -33,6 +43,8 @@ const Login = () => {
                         color="primary"
                         label="Senha"
                         type="password"
+                        onChange={(e) => setAuth({ ...auth, password: e.target.value })}
+                        value={auth.password}
                     />
                     <ButtonComponent
                         content='ENTRAR'

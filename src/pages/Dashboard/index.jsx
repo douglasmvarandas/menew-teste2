@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 import NavBar from '../../components/Navbar/index';
 
 import { Container } from './styles';
@@ -7,7 +8,12 @@ import Logo from '../../assets/menew_logo.png';
 import ModalCreateProduct from './ModalCreateProduct/index';
 import ModalEditProduct from './ModalEditProduct/index';
 
+import { initial_state } from '../../utils/constants';
+
 const Dashboard = () => {
+    const user = useSelector(state => state.user)
+    const [produtos, setProdutos] = useState(initial_state);
+    console.log(user)
 
     return (
         <>
