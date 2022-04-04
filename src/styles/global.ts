@@ -14,6 +14,10 @@ export default createGlobalStyle`
     list-style: none;
   }
 
+  a{
+    text-decoration: none;
+  }
+
   button{
     cursor: pointer;
   }

@@ -25,7 +25,7 @@ export const FormSignin = () => {
 
   const onSubmitData = (data: userProps) => {
     const {email, cpf} = data
-    dispatch( filterUserThunks(email))
+    dispatch(filterUserThunks(email))
     if(user.length > 0 && user[0].cpf == cpf){
       navigate("/dashboard")
       reset()

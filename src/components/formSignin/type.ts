@@ -1,6 +1,4 @@
-import { userProps } from "../../store/user/thunk";
-
-interface UserSignin {
+export interface UserSignin {
   email: string
   cpf: string
 }

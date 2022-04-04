@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Header } from "../../components/header";
 import { allProductsThunk, ProductProps } from "../../store/product/thunk";
 
 export const Dashboard = () => {
@@ -13,6 +14,7 @@ export const Dashboard = () => {
   console.log(productList)
   return (
     <>
+    <Header/>
       <h1>Dash</h1>
     </>
   )
