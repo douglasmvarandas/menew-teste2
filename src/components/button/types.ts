@@ -1,5 +1,5 @@
 export interface ButtonProps {
-  children: any
+  children?: any
   callback?: () => void
   type?: string
   name?: string

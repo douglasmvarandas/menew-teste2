@@ -1,7 +1,5 @@
+import { ProductProps } from "../../store/product/thunk";
+
 export interface CardProps {
-  product: {
-    name: string,
-    description: string,
-    image: string
-  }
+  product: ProductProps
 }

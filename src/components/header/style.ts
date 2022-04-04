@@ -12,6 +12,7 @@ export const Nav = styled.div`
   height: 10vh;
   padding: 5px;
   background: #00A09A;
+  position: fixed;
 
   span{
     color: #fff;

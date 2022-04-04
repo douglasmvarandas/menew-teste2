@@ -3,7 +3,7 @@ import { Dispatch } from 'redux'
 import api from "../../services/api";
 
 export interface ProductProps {
-  product: {name?: string, description?: string, image?: string}
+  name: string, description: string, image: string
 }
 
 export interface ThunkProductProps {
