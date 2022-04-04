@@ -55,9 +55,5 @@ export const Container = styled.section`
                 height: 40%;
             }
         }
-
-
     }
-
-
 `;

@@ -7,8 +7,9 @@ export const Navbar = styled.nav`
     background: #333333;
 
     position: fixed;
+    z-index: 1;
     top: 0;
-    
+
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -25,6 +26,4 @@ export const Navbar = styled.nav`
     @media (max-width:  768px) {
         padding: 1rem
     }
-
-
 `;

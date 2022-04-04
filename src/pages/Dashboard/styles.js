@@ -1,30 +1,66 @@
 import styled from 'styled-components';
 
-
-export const Div = styled.div`
-    display: flex;
-    justify-content: center;
-`;
-
-
 export const Container = styled.div`
+    width: 100%;
+    height: 100%;
+    max-width: 1550px;
+
     display: flex;
     justify-content: center;
+    align-items: center;
 
-    margin-top: 100px;
-    width: 100%;
-    max-width: 1120px;
-    height: 100vh;
+    padding-top: 100px;
+    
+    .container {
+        width: 70%;
+        height: 100%;
 
-    > div {
         display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        
-        padding: 10px;
-        border-bottom: 2px solid red;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
 
-        width: 100%;
-        height: 180px;
+        .container-header{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            
+            padding: 10px;
+            border-bottom: 2px solid red;
+
+            width: 100%;
+            height: 180px;
+
+            font-size: 1rem;
+
+        }
+
+        .container-body{
+            border: 2px solid #000;
+
+            width: 250px;
+            height: 320px;
+            margin: 15px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding-top:0;
+
+            > img {
+                width: 99%;
+                height: 50%;
+            }
+
+            > h3 {
+                font-size: 1.2rem;
+            }
+
+            > p {
+                font-size: 0.8rem;
+                padding: 0.5rem;
+            }
     }
+
 `;

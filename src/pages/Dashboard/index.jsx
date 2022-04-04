@@ -1,28 +1,94 @@
 import React from 'react';
 import NavBar from '../../components/Navbar/index';
-import { Container, Div } from './styles';
-import ButtonComponent from "../../components/Button/index";
+
+import { Container } from './styles';
+import Logo from '../../assets/menew_logo.png';
+
+import ButtonComponent from '../../components/Button';
 
 const Dashboard = () => {
     return (
-        <Div>
+        <>
             <NavBar />
             <Container>
-                <div>
-                    <h1>Olá, Victor Alves.</h1>
-                    <span>
-                        Total de produtos cadastrados: 20
-                    </span>
-                    <ButtonComponent
-                        content='CADASTRAR NOVO PRODUTO'
-                        color='neutral'
-                        fullWidth={true}
-                        type='submit'
-                    />
+                <div className="container">
+                    <div className="container-header">
+                        <h1>Olá, Victor Alves.</h1>
+                        <span>
+                            Total de produtos cadastrados: 20
+                        </span>
+                        <ButtonComponent
+                            content='CADASTRAR NOVO PRODUTO'
+                            color='neutral'
+                            fullWidth={true}
+                            type='submit'
+                        />
+                    </div>
+                    <div className="container-body">
+                        <img src={Logo} alt="Logo Menew" />
+                        <h3>Detergente</h3>
+                        <p>Lorem DCMSCM SKNCKDCJNSJNCI<br />IAOCOASOCAINCOASN</p>
+                        <ButtonComponent
+                            content='EDITAR PRODUTO'
+                            color='neutral'
+                            fullWidth={true}
+                            type='submit'
+                        />
+                    </div>
+                    <div className="container-body">
+                        <img src={Logo} alt="Logo Menew" />
+                        <h3>Detergente</h3>
+                        <p>Lorem DCMSCM SKNCKDCJNSJNCI<br />IAOCOASOCAINCOASN</p>
+                        <ButtonComponent
+                            content='EDITAR PRODUTO'
+                            color='neutral'
+                            fullWidth={true}
+                            type='submit'
+                        />
+                    </div>                    <div className="container-body">
+                        <img src={Logo} alt="Logo Menew" />
+                        <h3>Detergente</h3>
+                        <p>Lorem DCMSCM SKNCKDCJNSJNCI<br />IAOCOASOCAINCOASN</p>
+                        <ButtonComponent
+                            content='EDITAR PRODUTO'
+                            color='neutral'
+                            fullWidth={true}
+                            type='submit'
+                        />
+                    </div>                    <div className="container-body">
+                        <img src={Logo} alt="Logo Menew" />
+                        <h3>Detergente</h3>
+                        <p>Lorem DCMSCM SKNCKDCJNSJNCI<br />IAOCOASOCAINCOASN</p>
+                        <ButtonComponent
+                            content='EDITAR PRODUTO'
+                            color='neutral'
+                            fullWidth={true}
+                            type='submit'
+                        />
+                    </div>                    <div className="container-body">
+                        <img src={Logo} alt="Logo Menew" />
+                        <h3>Detergente</h3>
+                        <p>Lorem DCMSCM SKNCKDCJNSJNCI<br />IAOCOASOCAINCOASN</p>
+                        <ButtonComponent
+                            content='EDITAR PRODUTO'
+                            color='neutral'
+                            fullWidth={true}
+                            type='submit'
+                        />
+                    </div>                    <div className="container-body">
+                        <img src={Logo} alt="Logo Menew" />
+                        <h3>Detergente</h3>
+                        <p>Lorem DCMSCM SKNCKDCJNSJNCI<br />IAOCOASOCAINCOASN</p>
+                        <ButtonComponent
+                            content='EDITAR PRODUTO'
+                            color='neutral'
+                            fullWidth={true}
+                            type='submit'
+                        />
+                    </div>
                 </div>
             </Container>
-        </Div>
-
+        </>
     );
 }
 
