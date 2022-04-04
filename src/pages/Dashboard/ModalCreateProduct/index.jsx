@@ -1,25 +1,19 @@
 import React, { useState } from 'react';
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
-import ButtonComponent from '../../../components/Button';
+import { Container } from './styles';
 
-const style = {
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    width: 400,
-    bgcolor: 'background.paper',
-    border: '2px solid #000',
-    boxShadow: 24,
-    p: 4,
-};
+import ButtonComponent from '../../../components/Button';
+import InputComponent from '../../../components/Input';
+
 
 const ModalCreateProduct = () => {
     const [open, setOpen] = useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
+
+    const submit = () => {
+        handleClose();
+    };
 
     return (
         <>
@@ -32,17 +26,56 @@ const ModalCreateProduct = () => {
             <Modal
                 open={open}
                 onClose={handleClose}
-                aria-labelledby="modal-modal-title"
-                aria-describedby="modal-modal-description"
+                style={{ alignItems: 'center', justifyContent: 'center', display: 'flex' }}
             >
-                <Box sx={style}>
-                    <Typography id="modal-modal-title" variant="h6" component="h2">
-                        Text in a modal
-                    </Typography>
-                    <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                        Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-                    </Typography>
-                </Box>
+                <Container>
+                    <div className="modal-title">
+                        <h1>Cadastrar Novo Produto</h1>
+                    </div>
+
+
+                    <form onSubmit={submit}>
+                        <InputComponent
+                            required={true}
+                            fullWidth={true}
+                            color="primary"
+                            label="Nome do Produto"
+                        />
+
+                        <InputComponent
+                            required={false}
+                            fullWidth={true}
+                            color="primary"
+                            label="Descrição do Produto"
+                        />
+
+                        <InputComponent
+                            fullWidth={true}
+                            color="primary"
+                            type="file"
+                            accept="image/*"
+                        />
+
+                    </form>
+
+
+                    <div className="modal-footer">
+                        <ButtonComponent
+                            content='Cadastrar'
+                            color='save'
+                            type='submit'
+                            fullWidth={true}
+                        />
+
+                        <ButtonComponent
+                            content='Cancelar'
+                            color='cancel'
+                            onClick={handleClose}
+                            fullWidth={true}
+                        />
+                    </div>
+                </Container>
+
             </Modal>
         </>
 

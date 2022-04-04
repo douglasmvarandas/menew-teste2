@@ -14,7 +14,7 @@ const theme = createTheme({
 
 
 const InputComponent = (props) => {
-    const { label, type, fullWidth, color, required } = props;
+    const { label, type, fullWidth, color, required, accept } = props;
 
     return (
         <ThemeProvider theme={theme}>
@@ -24,6 +24,7 @@ const InputComponent = (props) => {
                 label={label}
                 type={type}
                 color={color}
+                accept={accept}
             />
         </ThemeProvider>
     );

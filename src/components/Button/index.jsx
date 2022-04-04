@@ -9,6 +9,14 @@ const theme = createTheme({
             main: '#ff4851',
             contrastText: '#ffff',
         },
+        save: {
+            main: 'green',
+            contrastText: '#ffff',
+        },
+        cancel: {
+            main: '#CACBCD',
+            contrastText: '#ffff',
+        },
     },
 });
 
