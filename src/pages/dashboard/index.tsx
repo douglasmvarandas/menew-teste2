@@ -6,6 +6,7 @@ import { Header } from "../../components/header";
 import { allProductsThunk, ProductProps } from "../../store/product/thunk";
 import { ProductContainer, ProductsBox, SearchBox } from "./style";
 import { ProductCardProps } from "./types";
+import { motion } from "framer-motion";
 
 export const Dashboard = () => {
   const dispatch = useDispatch();
@@ -26,31 +27,38 @@ export const Dashboard = () => {
       })
     );
   },[search])
-
+  
   return (
     <>
-      <ProductContainer>
-        <Header/>
-        <SearchBox>
-          <input
-            type="text"
-            placeholder="Pesquise por nome ou descrição"
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-          />
-        </SearchBox>
-        {openModal ? <FormProductUpdate modal={openModal} setModal={setOpenModal} /> : <></>}
-        <ProductsBox>
-          {filtered.length > 0 ?
-          filtered.map((product, key) => (
-            <Card product={product} setModal={setOpenModal} key={product.id}/>
-          )) :
-          productList.map(product => (
-            <Card product={product} setModal={setOpenModal} key={product.id}/>
-          ))
-          }
-        </ProductsBox>
-      </ProductContainer>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.3 }}
+      >
+        <ProductContainer>
+          <Header/>
+          <SearchBox>
+            <input
+              type="text"
+              placeholder="Pesquise por nome ou descrição"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+            />
+          </SearchBox>
+          {openModal ? <FormProductUpdate modal={openModal} setModal={setOpenModal} /> : <></>}
+          <ProductsBox>
+            {filtered.length > 0 ?
+            filtered.map((product, index) => (
+              <Card product={product} setModal={setOpenModal} key={index}/>
+            )) :
+            productList.map((product, index) => (
+              <Card product={product} setModal={setOpenModal} key={index}/>
+            ))
+            }
+          </ProductsBox>
+        </ProductContainer>
+      </motion.div>
     </>
   )
 }

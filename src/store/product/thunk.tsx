@@ -18,8 +18,6 @@ export const allProductsThunk = () => {
 }
 
 export const productUpdateThunk = (id: number, data: ThunkProductProps) => {
-  console.log(data)
-  console.log(id)
   return (dispatch: any) => {
     api.patch(`/products/${id}`, data).then(response => {
       console.log(response)

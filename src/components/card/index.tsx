@@ -18,7 +18,7 @@ export const Card = ({product, setModal, key}: CardProps) => {
         <img src={product.image} alt='product image' /> 
         <span>{product.name}</span>
         <span>{product.description}</span>
-        <Button name="Alterar" callback={() => handleUpdate(product.id)}></Button>
+        <Button name="Atualizar" callback={() => handleUpdate(product.id)}></Button>
       </CardsContainer>
     </>
   )

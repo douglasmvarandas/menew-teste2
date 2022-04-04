@@ -1,6 +1,6 @@
 export interface ButtonProps {
   children?: any
   callback?: () => void
-  type?: string
+  type?: "submit" | "button" | "reset"
   name?: string
 }

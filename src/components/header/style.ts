@@ -34,10 +34,11 @@ export const Ul = styled.ul<MobileProps>`
     padding: 18px 10px;
     color: #fff;
     text-align: center;
+    font-size: 18px;
+    cursor: pointer;
 
     a{
       color: #fff;
-      font-size: 24px;
 
       @media (min-width: 768px){
         font-size: 18px;
@@ -67,6 +68,7 @@ export const MobileStyle = styled.div<MobileProps>`
   top: 15px;
   right: 20px;
   z-index: 3;
+  cursor: pointer;
 
   @media (max-width: 768px){
     display: flex;

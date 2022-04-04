@@ -11,6 +11,18 @@
       "email": "aldinho@mail.com",
       "cpf": "22233344455",
       "id": 2
+    },
+    {
+      "name": "Aldo",
+      "email": "aldo@mail.com",
+      "cpf": "22233344455",
+      "id": 3
+    },
+    {
+      "name": "Pierre",
+      "email": "pierre@mail.com",
+      "cpf": "11122233344",
+      "id": 4
     }
   ],
   "products": [

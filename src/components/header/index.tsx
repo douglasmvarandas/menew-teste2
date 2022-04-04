@@ -1,10 +1,13 @@
-import { useState } from "react"
-import { User } from "../formSignin/type"
+import { useEffect, useState } from "react"
 import { Mobile } from "./mobile"
 import { Nav } from "./style"
 
 export const Header = () => {
-  const [user, setUser] = useState(localStorage.getItem("user"))
+  const [user, setUser] = useState("")
+
+  useEffect(() => {
+    setUser(localStorage.getItem("user") || "")
+  },[user])
 
   return (
     <>

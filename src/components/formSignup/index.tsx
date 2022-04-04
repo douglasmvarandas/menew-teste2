@@ -61,7 +61,7 @@ export const FormSignup = () => {
           register={register}
           error={errors.cpf?.message}
         />
-        <Button type="submit" name="Cadastrar">
+        <Button type={'submit'} name="Cadastrar">
           Cadastrar
         </Button>
         <FooterSignup>

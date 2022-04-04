@@ -6,11 +6,16 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "api": "json-server --watch ./src/mock/db.json --port 3333"
+    "api": "json-server --watch ./src/mock/db.json --port 3333",
+    "cypress": "cypress run",
+    "cypress:chrome": "cypress run -b chrome",
+    "cypress:open": "cypress open"
   },
   "dependencies": {
     "@hookform/resolvers": "^2.8.8",
     "axios": "^0.26.1",
+    "cypress": "^9.5.3",
+    "framer-motion": "^6.2.8",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-hook-form": "^7.29.0",

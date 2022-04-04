@@ -1,6 +1,6 @@
 import { MobileStyle } from "./style"
 import { useState } from "react"
-import { Desk } from "./desk"
+import { Options } from "./options"
 
 
 
@@ -14,7 +14,7 @@ export const Mobile = () => {
         <div />
         <div />
       </MobileStyle>
-      <Desk open={open} />
+      <Options open={open} />
     </>
   )
 }

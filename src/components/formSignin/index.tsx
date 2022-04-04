@@ -13,7 +13,7 @@ export const FormSignin = () => {
   const navigate = useNavigate()
   const dispatch = useDispatch();
   const user = useSelector((state: User) => state.user)
-
+  
   const {
     register,
     handleSubmit,
@@ -26,10 +26,9 @@ export const FormSignin = () => {
   const onSubmitData = (data: userProps) => {
     const {email, cpf} = data
     dispatch(filterUserThunks(email))
-    if(user.length > 0 && user[0].cpf == cpf){
-      navigate("/dashboard")
-      reset()
-    }
+    navigate("/dashboard")
+    reset()
+    
   };
 
   return (
