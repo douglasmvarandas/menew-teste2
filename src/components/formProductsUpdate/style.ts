@@ -10,8 +10,8 @@ export const FormComponentRegister = styled.form`
   background: #00A09A;
   text-align: center;
 
-  position: absolute;
-  top: 5%;
+  position: fixed;
+  top: 40%;
 
   button{
     box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.2);
@@ -39,7 +39,7 @@ export const FormComponentRegister = styled.form`
   }
 
   @media (min-width: 768px){
-    top: 10%;
+    top: 35%;
   }
 `;
 

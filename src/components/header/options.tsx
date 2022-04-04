@@ -14,7 +14,7 @@ export const Options = ({open}: MobileProps) => {
     <>
       <Ul open={open}>
           <li onClick={() => navigate("/dashboard")}>Produtos</li>
-          <li onClick={() => navigate("#")}>Sobre</li>
+          <li onClick={() => navigate("*")}>Sobre</li>
           <li onClick={handleSignoup}>Sair</li>
       </Ul>
     </>
