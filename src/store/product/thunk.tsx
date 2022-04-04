@@ -3,20 +3,12 @@ import { Dispatch } from 'redux'
 import api from "../../services/api";
 
 export interface ProductProps {
-  name: string, description: string, image: string
+  name: string, description: string, image: string, id: number
 }
 
 export interface ThunkProductProps {
   data: ProductProps
 }
-
-export const productThunks = ({data}: ThunkProductProps) => {
-  return (dispatch: Dispatch) => {
-    api.post("/products", data).then((response) => {
-      dispatch(product(response.data));
-    });
-  };
-};
 
 export const allProductsThunk = () => {
   return (dispatch: any) => {

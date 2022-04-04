@@ -7,7 +7,7 @@ export const ProductContainer = styled.div`
   width: 100%;
   min-height: 90vh;
   background: #f9ffff;
-  
+  position: relative;
 `;
 
 export const ProductsBox = styled.div`
