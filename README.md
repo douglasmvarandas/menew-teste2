@@ -21,3 +21,27 @@ Elaborar uma aplicação com ReactJS que atenda aos seguintes requisitos:
 Obs.: não precisa interagir com API para listar ou cadastrar informações, de maneira que as informações que serão apresentadas em tela podem ser definidas na própria aplicação.
  
 ...Boa Sorte!
+
+
+****
+
+## **DOCUMENTAÇÂO**
+
+**Informações de uso:**
+
+Para rodar a aplicação por completo, utilize os seguintes comandos:
+
+- Rodar o servidor
+```json
+  yarn dev
+```
+
+- Rodar a API
+```json
+  yarn api
+```
+
+- Rodar os testes
+```json
+  yarn cypress:open
+```

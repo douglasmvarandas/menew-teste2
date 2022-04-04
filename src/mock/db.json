@@ -1,0 +1,66 @@
+{
+  "user": [
+    {
+      "id": 1,
+      "name": "Pierre",
+      "email": "pierre@mail.com",
+      "cpf": "11122233344"
+    },
+    {
+      "name": "aldinho",
+      "email": "aldinho@mail.com",
+      "cpf": "22233344455",
+      "id": 2
+    },
+    {
+      "name": "Aldo",
+      "email": "aldo@mail.com",
+      "cpf": "22233344455",
+      "id": 3
+    },
+    {
+      "name": "Pierre",
+      "email": "pierre@mail.com",
+      "cpf": "11122233344",
+      "id": 4
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Samsung Galaxy A72",
+      "description": "Dual SIM 128 GB preto 6 GB RAM",
+      "image": "https://http2.mlstatic.com/D_NQ_NP_843682-MLA45402419266_032021-O.webp"
+    },
+    {
+      "id": 2,
+      "name": "Samsung Galaxy Note 20",
+      "description": "Dual SIM 256 GB bronze místico 12 GB RAM",
+      "image": "https://http2.mlstatic.com/D_NQ_NP_625014-MLA43651747442_102020-O.webp"
+    },
+    {
+      "id": 3,
+      "name": "Samsung Galaxy S20 FE",
+      "description": "Dual SIM 128 GB cloud navy 6 GB RAM",
+      "image": "https://http2.mlstatic.com/D_NQ_NP_941737-MLA44188585008_112020-O.webp"
+    },
+    {
+      "id": 4,
+      "name": "Apple iPhone 12",
+      "description": "64 GB verde",
+      "image": "https://http2.mlstatic.com/D_NQ_NP_739829-MLA46082341039_052021-O.webp"
+    },
+    {
+      "id": 5,
+      "name": "Moto G9 Play",
+      "description": "Dual SIM 64 GB azul-safira 4 GB RAM",
+      "image": "https://http2.mlstatic.com/D_NQ_NP_662487-MLA43910324327_102020-O.webp"
+    },
+    {
+      "id": 6,
+      "name": "LG K62+",
+      "description": "Dual SIM 128 GB sky blue 4 GB RAM",
+      "image": "https://http2.mlstatic.com/D_NQ_NP_668976-MLA45686583998_042021-O.webp"
+    }
+  ]
+}
