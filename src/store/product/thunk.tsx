@@ -1,6 +1,5 @@
 import { list } from "./action";
 import api from "../../services/api";
-import { DataUpdateProps } from "../../components/formProductsUpdate/types";
 
 export interface ProductProps {
   name: string, description: string, image: string, id: number
