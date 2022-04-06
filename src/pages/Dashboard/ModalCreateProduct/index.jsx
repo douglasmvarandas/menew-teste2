@@ -5,15 +5,35 @@ import { Container } from './styles';
 import ButtonComponent from '../../../components/Button';
 import InputComponent from '../../../components/Input';
 
+import { initial_state } from '../../../utils/constants';
+import { storage } from '../../../firebase/firebase';
+import { addDoc } from 'firebase/firestore';
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
-const ModalCreateProduct = () => {
+const ModalCreateProduct = (props) => {
+    const { getProducts, productsCollectionRef } = props;
+
     const [open, setOpen] = useState(false);
+    const [newProduct, setNewProduct] = useState(initial_state);
+
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
 
-    const submit = () => {
-        handleClose();
+
+    const createProduct = async () => {
+        try {
+            const imageRef = ref(storage, `images/${newProduct.image.name}`);
+            const uploadTask = await uploadBytes(imageRef, newProduct.image);
+            await getDownloadURL(uploadTask.ref).then((downloadURL) => {
+                addDoc(productsCollectionRef, { ...newProduct, image: downloadURL });
+            });
+            await getProducts();
+            handleClose();
+        } catch (error) {
+            console.log(error);
+        }
     };
+
 
     return (
         <>
@@ -33,27 +53,31 @@ const ModalCreateProduct = () => {
                         <h1>Cadastrar Novo Produto</h1>
                     </div>
 
-
-                    <form onSubmit={submit}>
+                    <form>
                         <InputComponent
                             required={true}
                             fullWidth={true}
-                            color="primary"
+                            color="secondary"
                             label="Nome do Produto"
+                            value={newProduct.name}
+                            onChange={(e) => setNewProduct({ ...newProduct, name: e.target.value })}
                         />
 
                         <InputComponent
                             required={false}
                             fullWidth={true}
-                            color="primary"
+                            color="secondary"
                             label="Descrição do Produto"
+                            value={newProduct.description}
+                            onChange={(e) => setNewProduct({ ...newProduct, description: e.target.value })}
                         />
 
                         <InputComponent
                             fullWidth={true}
-                            color="primary"
+                            color="secondary"
                             type="file"
                             accept="image/*"
+                            onChange={(e) => setNewProduct({ ...newProduct, image: e.target.files[0] })}
                         />
 
                     </form>
@@ -63,7 +87,7 @@ const ModalCreateProduct = () => {
                         <ButtonComponent
                             content='Cadastrar'
                             color='save'
-                            type='submit'
+                            onClick={createProduct}
                             fullWidth={true}
                         />
 

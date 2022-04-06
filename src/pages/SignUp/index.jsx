@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { LOGIN, DASHBOARD } from "../../navigation/routes"
 
@@ -8,29 +8,55 @@ import Logo from '../../assets/menew_logo.png';
 import ButtonComponent from "../../components/Button/index";
 import InputComponent from "../../components/Input/index";
 
+import { useDispatch } from 'react-redux'
+import { setUser } from '../../redux/action/user.action'
+
 import { user_state } from '../../utils/constants';
+import { auth, db } from "../../firebase/firebase.js";
+import { createUserWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
+import { collection, addDoc } from 'firebase/firestore';
 
 const SignUp = () => {
     const navigate = useNavigate();
-    const [user, setUser] = useState(user_state);
+    const dispatch = useDispatch(setUser);
+    const userCollectionRef = collection(db, "users")
 
-    const submit = () => {
-        navigate(DASHBOARD);
+    const [userSignUp, setUserSignUp] = useState(user_state);
+    const [error, setError] = useState('');
+
+    const createUser = async () => {
+        try {
+            const { email, password } = userSignUp;
+            await createUserWithEmailAndPassword(auth, email, password);
+            await addDoc(userCollectionRef, { ...userSignUp, uid: auth.currentUser.uid });
+            navigate(DASHBOARD);
+        } catch (error) {
+            setError('Ocorreu um erro ao criar o usuário, verifique email e/ou senha!');
+        }
     }
+
+    useEffect(() => {
+        onAuthStateChanged(auth, user => {
+            if (user) {
+                console.log("User is signed in");
+                dispatch(setUser(user));
+            }
+        })
+    }, [])
 
     return (
         <Container>
             <div>
                 <img src={Logo} alt="Logo Menew" />
-                <form onSubmit={submit}>
+                <form>
                     <InputComponent
                         required={true}
                         fullWidth={true}
                         color="primary"
                         label="Nome"
                         type="text"
-                        onChange={(e) => setUser({ ...user, name: e.target.value })}
-                        value={user.name}
+                        onChange={(e) => setUserSignUp({ ...userSignUp, name: e.target.value })}
+                        value={userSignUp.name}
                     />
                     <InputComponent
                         required={true}
@@ -38,8 +64,8 @@ const SignUp = () => {
                         color="primary"
                         label="E-mail"
                         type="email"
-                        onChange={(e) => setUser({ ...user, email: e.target.value })}
-                        value={user.email}
+                        onChange={(e) => setUserSignUp({ ...userSignUp, email: e.target.value })}
+                        value={userSignUp.email}
                     />
                     <InputComponent
                         required={true}
@@ -47,8 +73,8 @@ const SignUp = () => {
                         color="primary"
                         type="text"
                         label="CPF"
-                        onChange={(e) => setUser({ ...user, cpf: e.target.value })}
-                        value={user.cpf}
+                        onChange={(e) => setUserSignUp({ ...userSignUp, cpf: e.target.value })}
+                        value={userSignUp.cpf}
                     />
                     <InputComponent
                         required={true}
@@ -56,10 +82,11 @@ const SignUp = () => {
                         color="primary"
                         label="Senha"
                         type="password"
-                        onChange={(e) => setUser({ ...user, password: e.target.value })}
-                        value={user.password}
+                        onChange={(e) => setUserSignUp({ ...userSignUp, password: e.target.value })}
+                        value={userSignUp.password}
                     />
-                    <ButtonComponent content='CADASTRAR' color='neutral' fullWidth={true} type="submit" />
+                    {error && <p style={{ color: 'red' }}>{error}</p>}
+                    <ButtonComponent content='CADASTRAR' color='neutral' fullWidth={true} onClick={createUser} />
                     <span>já tem cadastro? <a href={LOGIN}>entrar</a></span>
                 </form>
             </div>

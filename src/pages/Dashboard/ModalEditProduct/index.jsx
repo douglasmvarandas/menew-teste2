@@ -5,14 +5,35 @@ import { Container } from './styles';
 import ButtonComponent from '../../../components/Button';
 import InputComponent from '../../../components/Input';
 
+import { initial_state } from '../../../utils/constants';
+import { db, storage } from '../../../firebase/firebase';
+import { updateDoc, doc } from 'firebase/firestore';
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
-const ModalEditProduct = () => {
+const ModalEditProduct = (props) => {
+    const { product, getProducts } = props;
+
     const [open, setOpen] = useState(false);
+    const [productEdit, setProductEdit] = useState({
+        ...initial_state, name: product.name, description: product.description, image: product.image
+    });
+
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
 
-    const submit = () => {
-        handleClose();
+    const uptadeProduct = async () => {
+        try {
+            const imageRef = ref(storage, `images/${productEdit.image.name}`);
+            const uploadTask = await uploadBytes(imageRef, productEdit.image);
+            await getDownloadURL(uploadTask.ref).then((downloadURL) => {
+                const productDoc = doc(db, 'product', product.id)
+                updateDoc(productDoc, { ...productEdit, image: downloadURL });
+            });
+            await getProducts();
+            handleClose();
+        } catch (error) {
+            console.log(error);
+        }
     };
 
     return (
@@ -30,30 +51,34 @@ const ModalEditProduct = () => {
             >
                 <Container>
                     <div className="modal-title">
-                        <h1>Editar Produto - DETERGENTE</h1>
+                        <h1>Editar Produto - {product.name}</h1>
                     </div>
 
 
-                    <form onSubmit={submit}>
+                    <form>
                         <InputComponent
-                            required={true}
                             fullWidth={true}
-                            color="primary"
+                            color="secondary"
                             label="Nome do Produto"
+                            value={productEdit.name}
+                            onChange={(e) => setProductEdit({ ...productEdit, name: e.target.value })}
                         />
 
                         <InputComponent
                             required={false}
                             fullWidth={true}
-                            color="primary"
+                            color="secondary"
                             label="Descrição do Produto"
+                            value={productEdit.description}
+                            onChange={(e) => setProductEdit({ ...productEdit, description: e.target.value })}
                         />
 
                         <InputComponent
                             fullWidth={true}
-                            color="primary"
+                            color="secondary"
                             type="file"
                             accept="image/*"
+                            onChange={(e) => setProductEdit({ ...productEdit, image: e.target.files[0] })}
                         />
 
                     </form>
@@ -63,8 +88,8 @@ const ModalEditProduct = () => {
                         <ButtonComponent
                             content='SALVAR'
                             color='save'
-                            type='submit'
                             fullWidth={true}
+                            onClick={uptadeProduct}
                         />
 
                         <ButtonComponent

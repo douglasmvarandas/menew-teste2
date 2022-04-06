@@ -51,6 +51,7 @@ export const Container = styled.div`
             > img {
                 width: 99%;
                 height: 50%;
+                border-bottom: 1px solid #000;
             }
 
             > h3 {

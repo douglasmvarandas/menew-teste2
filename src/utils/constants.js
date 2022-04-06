@@ -1,4 +1,5 @@
 export const user_state = {
+    uid: '',
     name: '',
     email: '',
     cpf: '',

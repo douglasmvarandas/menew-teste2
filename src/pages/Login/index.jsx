@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { SIGNUP, DASHBOARD } from "../../navigation/routes"
 
@@ -12,30 +12,48 @@ import { useDispatch } from 'react-redux'
 import { setUser } from '../../redux/action/user.action'
 import { user_state } from '../../utils/constants';
 
+import { auth } from "../../firebase/firebase.js";
+import { signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
+
 const Login = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch(setUser);
 
-    const [auth, setAuth] = useState(user_state);
+    const [userLogin, setUserLogin] = useState(user_state);
+    const [error, setError] = useState('');
 
-    const submit = () => {
-        dispatch(setUser(auth))
-        navigate(DASHBOARD);
+    const handleLogin = async () => {
+        try {
+            const { email, password } = userLogin;
+            await signInWithEmailAndPassword(auth, email, password);
+            navigate(DASHBOARD);
+        } catch (error) {
+            setError('Email ou Senha inválidos!');
+        }
     }
+
+    useEffect(() => {
+        onAuthStateChanged(auth, user => {
+            if (user) {
+                console.log("User is signed in");
+                dispatch(setUser(user));
+            }
+        })
+    }, [])
 
     return (
         <Container>
             <div>
                 <img src={Logo} alt="Logo Menew" />
-                <form onSubmit={submit}>
+                <form >
                     <InputComponent
                         required={true}
                         fullWidth={true}
                         color="primary"
                         label="E-mail"
                         type="email"
-                        onChange={(e) => setAuth({ ...auth, email: e.target.value })}
-                        value={auth.email}
+                        onChange={(e) => setUserLogin({ ...userLogin, email: e.target.value })}
+                        value={userLogin.email}
                     />
                     <InputComponent
                         required={true}
@@ -43,14 +61,15 @@ const Login = () => {
                         color="primary"
                         label="Senha"
                         type="password"
-                        onChange={(e) => setAuth({ ...auth, password: e.target.value })}
-                        value={auth.password}
+                        onChange={(e) => setUserLogin({ ...userLogin, password: e.target.value })}
+                        value={userLogin.password}
                     />
+                    {error && <p style={{ color: 'red' }}>{error}</p>}
                     <ButtonComponent
                         content='ENTRAR'
                         color='neutral'
                         fullWidth={true}
-                        type='submit'
+                        onClick={handleLogin}
                     />
                     <span>não tem cadastro? <a href={SIGNUP}>cadastre-se</a></span>
                 </form>

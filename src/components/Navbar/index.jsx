@@ -10,6 +10,9 @@ import SearchIcon from '@mui/icons-material/Search';
 import LogoutIcon from '@mui/icons-material/Logout';
 import IconButton from '@mui/material/IconButton';
 
+import { auth } from '../../firebase/firebase.js';
+import { signOut } from "firebase/auth";
+
 const NavBar = () => {
     const navigate = useNavigate();
 
@@ -28,7 +31,12 @@ const NavBar = () => {
             <IconButton
                 edge="end"
                 aria-haspopup="true"
-                onClick={() => navigate(LOGIN)}
+                onClick={() =>
+                    signOut(auth)
+                        .then(() => {
+                            console.log('Signed out');
+                            navigate(LOGIN)
+                        })}
                 color="error"
                 title="Sair"
             >
