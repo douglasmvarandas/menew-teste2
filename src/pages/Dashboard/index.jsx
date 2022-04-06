@@ -43,7 +43,7 @@ const Dashboard = () => {
 
     useEffect(() => { getUsers() }, [])
     useEffect(() => { getProducts() }, [searchProducts])
-    console.log(products)
+
     return (
         <>
             <NavBar setSearchProducts={setSearchProducts} />

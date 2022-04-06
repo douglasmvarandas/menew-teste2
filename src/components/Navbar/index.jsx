@@ -13,8 +13,12 @@ import IconButton from '@mui/material/IconButton';
 import { auth } from '../../firebase/firebase.js';
 import { signOut } from "firebase/auth";
 
+import { useDispatch } from 'react-redux'
+import { setUserLogout } from '../../redux/action/user.action'
+
 const NavBar = (props) => {
     const { setSearchProducts } = props;
+    const dispatch = useDispatch(setUserLogout);
 
     const navigate = useNavigate();
 
@@ -37,6 +41,7 @@ const NavBar = (props) => {
                 onClick={() =>
                     signOut(auth)
                         .then(() => {
+                            dispatch(setUserLogout());
                             console.log('Signed out');
                             navigate(LOGIN)
                         })}
