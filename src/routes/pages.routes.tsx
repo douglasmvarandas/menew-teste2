@@ -1,22 +1,20 @@
-import DrinksPage from '../pages/Drinks'
-import RestaurantsPage from '../pages/Restaurants'
-import SnacksPage from '../pages/Snacks'
+import { ListItemsPage } from '../pages/ListItems'
 
 const APP_ROUTES = [
   {
     label: 'Bebidas',
     path: '/',
-    component: <DrinksPage />,
+    component: <ListItemsPage category="drinks" />,
   },
   {
     label: 'Lanches',
     path: 'snacks',
-    component: <SnacksPage />,
+    component: <ListItemsPage category="snacks" />,
   },
   {
     label: 'Restaurantes',
     path: 'restaurants',
-    component: <RestaurantsPage />,
+    component: <ListItemsPage category="restaurants" />,
   },
 ];
 
