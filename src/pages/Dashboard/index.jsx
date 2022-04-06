@@ -15,14 +15,16 @@ const Dashboard = () => {
 
     const [products, setProducts] = useState([]);
     const [userLoggedIn, setUserLoggedIn] = useState([])
-
+    const [searchProducts, setSearchProducts] = useState('')
     const productsCollectionRef = collection(db, "product")
     const userCollectionRef = collection(db, "users")
 
     const getProducts = async () => {
         try {
             const data = await getDocs(productsCollectionRef)
-            setProducts(data.docs.map(doc => ({ ...doc.data(), id: doc.id })))
+            const allProducts = data.docs.map(doc => ({ ...doc.data(), id: doc.id }))
+            const filteredProducts = allProducts.filter(product => product.name.toLowerCase().includes(searchProducts.toLowerCase()))
+            setProducts(filteredProducts)
         } catch (error) {
             console.log(error)
         }
@@ -38,11 +40,12 @@ const Dashboard = () => {
         }
     }
 
-    useEffect(() => { getProducts(); getUsers() }, [])
-    console.log(products)
+    useEffect(() => { getUsers() }, [])
+    useEffect(() => { getProducts() }, [searchProducts])
+
     return (
         <>
-            <NavBar />
+            <NavBar setSearchProducts={setSearchProducts} />
             <Container>
                 <div className="container">
                     <div className="container-header">

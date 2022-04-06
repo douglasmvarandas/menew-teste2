@@ -13,7 +13,9 @@ import IconButton from '@mui/material/IconButton';
 import { auth } from '../../firebase/firebase.js';
 import { signOut } from "firebase/auth";
 
-const NavBar = () => {
+const NavBar = (props) => {
+    const { setSearchProducts } = props;
+
     const navigate = useNavigate();
 
     return (
@@ -26,6 +28,7 @@ const NavBar = () => {
                 <StyledInputBase
                     placeholder="Pesquise por produtos"
                     inputProps={{ 'aria-label': 'search' }}
+                    onChange={(e) => setSearchProducts(e.target.value)}
                 />
             </Search>
             <IconButton
