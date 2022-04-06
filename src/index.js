@@ -19,6 +19,5 @@ root.render(
         <Navigation />
       </PersistGate>
     </Provider>
-  </StrictMode>,
-  document.getElementById('root')
+  </StrictMode>
 );

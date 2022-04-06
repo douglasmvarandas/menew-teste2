@@ -17,7 +17,7 @@ const ModalEditProduct = (props) => {
     const [productEdit, setProductEdit] = useState({
         ...initial_state, name: product.name, description: product.description, image: product.image
     });
-
+    console.log(productEdit);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
 
@@ -27,7 +27,7 @@ const ModalEditProduct = (props) => {
             const uploadTask = await uploadBytes(imageRef, productEdit.image);
             await getDownloadURL(uploadTask.ref).then((downloadURL) => {
                 const productDoc = doc(db, 'product', product.id)
-                updateDoc(productDoc, { ...productEdit, image: downloadURL });
+                updateDoc(productDoc, { ...productEdit, image: downloadURL || product.image });
             });
             await getProducts();
             handleClose();

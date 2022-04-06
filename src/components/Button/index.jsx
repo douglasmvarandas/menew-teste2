@@ -11,11 +11,11 @@ const theme = createTheme({
         },
         save: {
             main: 'green',
-            contrastText: '#ffff',
+            contrastText: '#fff',
         },
         cancel: {
             main: '#CACBCD',
-            contrastText: '#ffff',
+            contrastText: '#000',
         },
     },
 });

@@ -55,14 +55,18 @@ const Dashboard = () => {
                         </span>
                         <ModalCreateProduct getProducts={getProducts} productsCollectionRef={productsCollectionRef} />
                     </div>
-                    {products.map(product => (
-                        <div key={product.id} className="container-body">
-                            <img src={product.image} alt="Logo Menew" />
-                            <h3>{product.name}</h3>
-                            <p>{product.description}</p>
-                            <ModalEditProduct product={product} getProducts={getProducts} />
-                        </div>
-                    ))}
+                    {products.length > 0 ?
+                        products.map(product => (
+                            <div key={product.id} className="container-body">
+                                <img src={product.image} alt={`Imagem do Porduto ${product.name}`} />
+                                <h3>{product.name}</h3>
+                                <p>{product.description}</p>
+                                <ModalEditProduct product={product} getProducts={getProducts} />
+                            </div>
+                        ))
+                        :
+                        <h1>Não há Produtos Cadastrados</h1>
+                    }
                 </div>
             </Container>
         </>
