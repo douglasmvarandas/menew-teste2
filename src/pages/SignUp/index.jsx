@@ -7,6 +7,7 @@ import Logo from '../../assets/menew_logo.png';
 
 import ButtonComponent from "../../components/Button/index";
 import InputComponent from "../../components/Input/index";
+import ReactInputMask from "react-input-mask";
 
 import { useDispatch } from 'react-redux'
 import { setUser } from '../../redux/action/user.action'
@@ -67,15 +68,26 @@ const SignUp = () => {
                         onChange={(e) => setUserSignUp({ ...userSignUp, email: e.target.value })}
                         value={userSignUp.email}
                     />
-                    <InputComponent
-                        required={true}
-                        fullWidth={true}
-                        color="primary"
-                        type="text"
-                        label="CPF"
-                        onChange={(e) => setUserSignUp({ ...userSignUp, cpf: e.target.value })}
+                    <ReactInputMask
+                        mask={'999.999.999-99'}
+                        alwaysShowMask={true}
+                        maskChar={null}
                         value={userSignUp.cpf}
-                    />
+                        onChange={(e) =>
+                            setUserSignUp({ ...userSignUp, cpf: e.target.value })
+                        }
+                    >
+                        {(inputProps) => (
+                            <InputComponent
+                                {...inputProps}
+                                required={true}
+                                fullWidth={true}
+                                color="primary"
+                                label="CPF"
+                            />
+                        )}
+                    </ReactInputMask>
+
                     <InputComponent
                         required={true}
                         fullWidth={true}

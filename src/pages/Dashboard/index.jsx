@@ -49,7 +49,7 @@ const Dashboard = () => {
             <Container>
                 <div className="container">
                     <div className="container-header">
-                        <h1>Olá, {userLoggedIn[0]?.name || ''}.</h1>
+                        <h1>Olá, {userLoggedIn[0]?.name}. - {userLoggedIn[0]?.cpf}</h1>
                         <span>
                             Total de produtos cadastrados: {products?.length}
                         </span>
