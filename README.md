@@ -28,7 +28,7 @@ A idea do **Cardap.io** consiste em uma plataforma (simples) ao qual o usuário 
 
 **Produtos**
 
-- [ ] Listagem de produtos
+- [X] Listagem de produtos
 - [ ] Edição de produtos
 
 ---
@@ -53,6 +53,7 @@ A idea do **Cardap.io** consiste em uma plataforma (simples) ao qual o usuário 
 - [Redux](https://redux.js.org/)
 - [Typescript](https://www.typescriptlang.org/)
 - [Material UI .v5](https://mui.com/pt/)
+- [Vite](https://vitejs.dev/)
 
 ---
 
