@@ -20,6 +20,7 @@ Elaborar uma aplicação com ReactJS que atenda aos seguintes requisitos:
 - [x] Private Route com [Redux](https://redux.js.org/) e [react-router-dom](https://v5.reactrouter.com/web/guides/quick-start);
 - [x] Barra de pesquisa de produtos;
 - [x] Responsividade;
+- [x] Deploy na [Vercel](https://vercel.com/);
 
 ## 🛠️Ferramentas
 
