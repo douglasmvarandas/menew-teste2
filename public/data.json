@@ -1,0 +1,34 @@
+{
+    "users": [
+        {
+            "login": "admin",
+            "senha": "facil",
+            "nome": "Administrador"
+        }, {
+            "login": "rodolfomarques",
+            "senha": "4321",
+            "nome": "Rodolfo Marques"
+        }
+    ],
+    "products": [
+        {
+            "id": 1,
+            "name": "Café Arábica",
+            "description": "A planta que dá origem a esta variedade do grão é proveniente das montanhas da Etiópia. Sabe-se que a altitude está amplamente relacionada à qualidade do grão produzido.",
+            "img": "/img/arabica.png"
+        },
+        {
+            "id": 2,
+            "name": "Café Bourbon",
+            "description": "Essa é uma das variedades mais conhecidas no mundo! Ela deriva do Arábica e é bastante popular, principalmente, fora do Brasil. Entre as características peculiares esta...",
+            "img": "/img/cafe.jpg"
+        },
+        {
+            "id": 3,
+            "name": "Café Kona",
+            "description": "Ele recebe este nome porque é cultivado na cidade de Kona, Havaí. O clima local e o solo vulcânico da região são propícios para o cultivo dessa variedade exótica de arábica.",
+            "img": "/img/kona.jpg"
+        }
+    ]
+    
+}
