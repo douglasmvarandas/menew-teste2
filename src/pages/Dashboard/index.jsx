@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import NavBar from '../../components/Navbar/index';
 
 import { Container } from './styles';
+import Logo from '../../assets/menew_logo.png';
 
 import ModalCreateProduct from './ModalCreateProduct/index';
 import ModalEditProduct from './ModalEditProduct/index';
@@ -42,7 +43,7 @@ const Dashboard = () => {
 
     useEffect(() => { getUsers() }, [])
     useEffect(() => { getProducts() }, [searchProducts])
-
+    console.log(products)
     return (
         <>
             <NavBar setSearchProducts={setSearchProducts} />
@@ -58,7 +59,7 @@ const Dashboard = () => {
                     {products.length > 0 ?
                         products.map(product => (
                             <div key={product.id} className="container-body">
-                                <img src={product.image} alt={`Imagem do Porduto ${product.name}`} />
+                                <img src={product.image ? product.image : Logo} alt={`Imagem do Porduto ${product.name}`} />
                                 <h3>{product.name}</h3>
                                 <p>{product.description}</p>
                                 <ModalEditProduct product={product} getProducts={getProducts} />

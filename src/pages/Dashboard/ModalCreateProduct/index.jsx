@@ -4,6 +4,7 @@ import { Container } from './styles';
 
 import ButtonComponent from '../../../components/Button';
 import InputComponent from '../../../components/Input';
+import Message from '../../../components/Messages/index';
 
 import { initial_state } from '../../../utils/constants';
 import { storage } from '../../../firebase/firebase';
@@ -14,6 +15,8 @@ const ModalCreateProduct = (props) => {
     const { getProducts, productsCollectionRef } = props;
 
     const [open, setOpen] = useState(false);
+    const [messageOk, setMessageOk] = useState(false);
+    const [messageError, setMessageError] = useState(false);
     const [newProduct, setNewProduct] = useState(initial_state);
 
     const handleOpen = () => setOpen(true);
@@ -27,9 +30,9 @@ const ModalCreateProduct = (props) => {
             await getDownloadURL(uploadTask.ref).then((downloadURL) => {
                 addDoc(productsCollectionRef, { ...newProduct, image: downloadURL });
             });
-            await getProducts();
-            handleClose();
+            setMessageOk(true);
         } catch (error) {
+            setMessageError(true);
             console.log(error);
         }
     };
@@ -99,8 +102,23 @@ const ModalCreateProduct = (props) => {
                         />
                     </div>
                 </Container>
-
             </Modal>
+            <Message
+                open={messageOk}
+                setOpen={setMessageOk}
+                content="Produto Cadastrado com Sucesso!"
+                severity="success"
+                callback={() => {
+                    handleClose();
+                    getProducts();
+                }}
+            />
+            <Message
+                open={messageError}
+                setOpen={setMessageError}
+                content="Erro ao Cadastrar Produto!"
+                severity="error"
+            />
         </>
 
     );

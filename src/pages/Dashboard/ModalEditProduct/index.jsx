@@ -4,6 +4,7 @@ import { Container } from './styles';
 
 import ButtonComponent from '../../../components/Button';
 import InputComponent from '../../../components/Input';
+import Message from '../../../components/Messages/index';
 
 import { initial_state } from '../../../utils/constants';
 import { db, storage } from '../../../firebase/firebase';
@@ -14,10 +15,12 @@ const ModalEditProduct = (props) => {
     const { product, getProducts } = props;
 
     const [open, setOpen] = useState(false);
+    const [messageOk, setMessageOk] = useState(false);
+    const [messageError, setMessageError] = useState(false);
     const [productEdit, setProductEdit] = useState({
         ...initial_state, name: product.name, description: product.description, image: product.image
     });
-    console.log(productEdit);
+
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
 
@@ -29,9 +32,9 @@ const ModalEditProduct = (props) => {
                 const productDoc = doc(db, 'product', product.id)
                 updateDoc(productDoc, { ...productEdit, image: downloadURL || product.image });
             });
-            await getProducts();
-            handleClose();
+            setMessageOk(true);
         } catch (error) {
+            setMessageError(true);
             console.log(error);
         }
     };
@@ -75,6 +78,7 @@ const ModalEditProduct = (props) => {
 
                         <InputComponent
                             fullWidth={true}
+                            requied={true}
                             color="secondary"
                             type="file"
                             accept="image/*"
@@ -100,8 +104,24 @@ const ModalEditProduct = (props) => {
                         />
                     </div>
                 </Container>
-
             </Modal>
+            
+            <Message
+                open={messageOk}
+                setOpen={setMessageOk}
+                content="Produto Editado com Sucesso!"
+                severity="success"
+                callback={() => {
+                    handleClose();
+                    getProducts();
+                }}
+            />
+            <Message
+                open={messageError}
+                setOpen={setMessageError}
+                content="Erro ao Editar Produto!"
+                severity="error"
+            />
         </>
 
     );

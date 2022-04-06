@@ -45,6 +45,7 @@ export const Container = styled.div`
         display: flex;
         justify-content: space-between;
         flex-direction: row;
+        
         button:nth-child(1){
             margin-right: 20px;
         }
