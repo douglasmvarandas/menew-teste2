@@ -26,10 +26,10 @@ A idea do **Cardap.io** consiste em uma plataforma (simples) ao qual o usuário 
 - [X] Cadastro de usuários
 - [X] Login de usuários
 
-**Produtos**
+**Itens**
 
-- [X] Listagem de produtos
-- [ ] Edição de produtos
+- [X] Listagem de itens
+- [X] Edição de itens
 
 ---
 
@@ -39,7 +39,7 @@ A idea do **Cardap.io** consiste em uma plataforma (simples) ao qual o usuário 
 
 - [x] Logout de usuários
 
-**Filtros _(Produtos)_**
+**Filtros _(Itens)_**
 
 - [ ] Filtrar por preço
 - [ ] Filtrar por nome
