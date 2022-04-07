@@ -81,7 +81,7 @@ const ModalEditProduct = (props) => {
                             requied={true}
                             color="secondary"
                             type="file"
-                            accept="image/*"
+                            inputProps={{ accept: "image/*" }}
                             onChange={(e) => setProductEdit({ ...productEdit, image: e.target.files[0] })}
                         />
 

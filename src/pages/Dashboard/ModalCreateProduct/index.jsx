@@ -79,7 +79,7 @@ const ModalCreateProduct = (props) => {
                             fullWidth={true}
                             color="secondary"
                             type="file"
-                            accept="image/*"
+                            inputProps={{ accept: "image/*" }}
                             onChange={(e) => setNewProduct({ ...newProduct, image: e.target.files[0] })}
                         />
 
