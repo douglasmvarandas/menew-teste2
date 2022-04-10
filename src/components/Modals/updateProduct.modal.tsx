@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
@@ -8,7 +8,7 @@ import DialogActions from '@mui/material/DialogActions';
 
 import GradientButton from '../GradientButton';
 
-import { EDIT_PRODUCT_MODAL_TITLE, SUCESS_UPDATE_PRODUCT_MESSAGE, ERROR_SIGNUP_MESSAGE } from '../../constants/strings.constants'
+import { EDIT_PRODUCT_MODAL_TITLE, SUCESS_UPDATE_PRODUCT_MESSAGE } from '../../constants/strings.constants'
 import Toast, { ToastInitialState } from '../Toast'
 
 import { useDispatch } from 'react-redux';

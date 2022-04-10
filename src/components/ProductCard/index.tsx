@@ -8,20 +8,30 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 
 import { iProducts } from '../../db';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { memo, useState } from 'react';
 import UpdateProductModal from '../Modals/updateProduct.modal';
+import { deleteItem } from '../../reducers/slices/product.slice';
 
 function ProductCard({ id, title, description, urlImage, category }: iProducts) {
     const { isLogged } = useSelector((state: any) => state.user)
+    const dispatch = useDispatch()
 
     const [openUpdateModal, setUpdateModal] = useState(false)
 
     const toggleUpdateModal = () => setUpdateModal(!openUpdateModal)
 
+    const handleDeleteItem = () => {
+        dispatch(deleteItem({ id, title, description, urlImage, category }))
+    }
+
     return (
         <>
-            <UpdateProductModal open={openUpdateModal} toggle={toggleUpdateModal} productData={{ id, title, description, urlImage, category }} />
+            <UpdateProductModal
+                open={openUpdateModal}
+                toggle={toggleUpdateModal}
+                productData={{ id, title, description, urlImage, category }}
+            />
             <Card sx={{ maxWidth: 325, marginTop: 4 }}>
                 <CardMedia
                     component="img"
@@ -41,8 +51,20 @@ function ProductCard({ id, title, description, urlImage, category }: iProducts) 
                 {
                     isLogged && (
                         <CardActions>
-                            <Button size="small" endIcon={<DeleteIcon />}>Deletar</Button>
-                            <Button size="small" onClick={toggleUpdateModal} endIcon={<EditIcon />}>Editar</Button>
+                            <Button
+                                size="small"
+                                onClick={handleDeleteItem}
+                                endIcon={<DeleteIcon />}
+                            >
+                                Deletar
+                            </Button>
+                            <Button
+                                size="small"
+                                onClick={toggleUpdateModal}
+                                endIcon={<EditIcon />}
+                            >
+                                Editar
+                            </Button>
                         </CardActions>
                     )
                 }

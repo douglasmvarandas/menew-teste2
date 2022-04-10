@@ -32,8 +32,8 @@ export function ListItemsPage({ category }: PageProps) {
         setTimeout(() => {
             setData(categoryProducts)
             setIsLoading(false)
-        }, 1000)
-    }, [category])
+        }, 500)
+    }, [category, drinks, restaurants, snacks])
 
     return (
         <Grid container justifyContent="center">
