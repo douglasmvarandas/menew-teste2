@@ -39,6 +39,9 @@ A idea do **Cardap.io** consiste em uma plataforma (simples) ao qual o usuário 
 
 - [x] Logout de usuários
 
+**Itens**
+- [X] Deletar item
+
 **Filtros _(Itens)_**
 
 - [ ] Filtrar por preço
