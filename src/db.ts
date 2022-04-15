@@ -19,7 +19,7 @@ export const Users: iUser[] = [
 
 export interface iProducts {
   id: number;
-  category: string;
+  category: 'Drink' | 'Restaurant' | 'Snack';
   urlImage: string;
   title: string;
   description: string;
