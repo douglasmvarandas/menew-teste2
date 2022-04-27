@@ -18,15 +18,22 @@ export function ListItemsPage({ category }: PageProps) {
     const [isLoading, setIsLoading] = useState(true)
 
     useEffect(() => {
-        if (!drinks || !snacks) return
+        if (!drinks || !snacks || !restaurants) return
 
         setIsLoading(true)
 
         let categoryProducts: iProducts[]
 
-        if (category === 'drinks') categoryProducts = drinks
-        else if (category === 'restaurants') categoryProducts = restaurants
-        else categoryProducts = snacks
+        switch (category) {
+            case 'drinks':
+                categoryProducts = drinks
+                break;
+            case 'restaurants':
+                categoryProducts = restaurants
+                break;
+            default: categoryProducts = snacks
+                break;
+        }
 
         // timeout to simulate a loading
         setTimeout(() => {
@@ -42,14 +49,13 @@ export function ListItemsPage({ category }: PageProps) {
                 container
                 spacing={4}
                 maxWidth={1200}
-                justifyContent="center"
+                justifyContent='center'
             >
                 {
                     !isLoading ? (
                         data.map((item: iProducts) => (
-                            <Grid item>
+                            <Grid item key={item.id}>
                                 <ProductCard
-                                    key={item.id}
                                     id={item.id}
                                     title={item.title}
                                     urlImage={item.urlImage}

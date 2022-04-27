@@ -1,4 +1,4 @@
-import { ListItemsPage } from '../pages/ListItems'
+import { ListItemsPage } from '../pages/Home'
 
 const APP_ROUTES = [
   {
